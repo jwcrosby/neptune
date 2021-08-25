@@ -10,3 +10,7 @@ def about(request):
 def dives_index(request):
   dives = Dive.objects.all()
   return render(request, 'dives/index.html', { 'dives': dives })
+
+def dives_detail(request, cat_id):
+  dive = Dive.objects.get(id=cat_id)
+  return render(request, 'dives/detail.html', { 'dive': dive })
