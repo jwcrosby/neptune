@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
-<h1>about neptune</h1>
-<hr />
-<p>
-  get wet
-</p>
+  <div class="page-header">
+    <h1>About Neptune</h1>
+    <img src="{% static 'images/helmet3.png' %}" alt="logo"/>
+  </div>
+  <hr />
+  <p>
+    GET WET
+  </p>
 
 {% endblock %}
