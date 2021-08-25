@@ -11,6 +11,7 @@ class Dive(models.Model):
 
 class Note(models.Model):
   note = models.TextField(max_length=250)
+  dive = models.ForeignKey(Dive, on_delete=models.CASCADE)
 
   def __str__(self):
     return f"Note: {self.note}"
