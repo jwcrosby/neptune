@@ -11,6 +11,6 @@ def dives_index(request):
   dives = Dive.objects.all()
   return render(request, 'dives/index.html', { 'dives': dives })
 
-def dives_detail(request, cat_id):
-  dive = Dive.objects.get(id=cat_id)
+def dives_detail(request, dive_id):
+  dive = Dive.objects.get(id=dive_id)
   return render(request, 'dives/detail.html', { 'dive': dive })
