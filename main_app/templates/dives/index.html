@@ -18,7 +18,7 @@
 <section class="card-container">
   {% for dive in dives %}
     <div class="card">
-      <a href="{% url 'dives_detail' cat.id %}"">
+      <a href="{% url 'dives_detail' dive.id %}"">
         <div class="card-content">
           <div class="card-img-container">
             <img 
@@ -30,7 +30,7 @@
           <h2 class="card-title">#{{ dive.number }}</h2>
             <p>{{ dive.location }}</p>
             <p>Max depth: {{ dive.max_depth }} ft</p>
-          <p><small>{{ dive.notes }}</small></p>
+          {% comment %} <p><small>{{ dive.notes }}</small></p> {% endcomment %}
         </div>
       </a>
     </div>

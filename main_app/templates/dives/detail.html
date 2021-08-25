@@ -22,8 +22,39 @@
     <h1>{{ dive.number }}</h1>
       <h2>{{ dive.location }} </h2>
       <h3>Max depth: {{ dive.max_depth }} ft</h3>
-      <h3>{{ dive.notes }}</h3>
   </div>
 </section>
+
+<div class="notes-toy-container">
+  <section class="notes">
+    <div class="subsection-title">
+      <h2>Notes</h2>
+      <img 
+        src="{% static 'images/1.png' %}" 
+        alt="1"
+      />
+      <img 
+        src="{% static 'images/2.png' %}"
+        alt="2"
+      />
+      <img 
+        src="{% static 'images/3.png' %}" 
+        alt="3"
+      />
+    </div>
+    <table>
+      <thead>
+        <tr><th>Note</th></tr>
+      </thead>
+      <tbody>
+        {% for note in dive.note_set.all %}
+          <tr>
+            <td>{{note.note}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+</div>
 
 {% endblock %}
