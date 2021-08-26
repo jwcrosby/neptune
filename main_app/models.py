@@ -14,3 +14,6 @@ class Note(models.Model):
 
   def __str__(self):
     return f"Note: {self.note}"
+
+  # class Meta:
+    # ordering = ['-date']
