@@ -38,6 +38,10 @@ class DiveCreate(CreateView):
     model = Dive
     fields = ['number', 'location', 'max_depth']
 
+    def form_valid(self, form):
+        form.instance.user = self.request.user 
+        return super().form_valid(form)
+
 
 class DiveUpdate(UpdateView):
     model = Dive
