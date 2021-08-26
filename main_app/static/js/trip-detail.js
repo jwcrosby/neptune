@@ -1,12 +1,24 @@
-// const dateInput = document.getElementById("id_date");
+const startDateInput = document.getElementById("id_start_date");
+const endDateInput = document.getElementById("id_end_date");
 
-// const picker = MCDatepicker.create({
-//   el: "#id_date",
-//   dateFormat: "yyyy-mm-dd",
-//   closeOnBlur: true,
-//   selectedDate: new Date(),
-// });
+const startPicker = MCDatepicker.create({
+  el: "#id_start_date",
+  dateFormat: "yyyy-mm-dd",
+  closeOnBlur: true,
+  selectedDate: new Date(),
+});
 
-// dateInput.addEventListener("click", (evt) => {
-//   picker.open();
-// });
+const endPicker = MCDatepicker.create({
+  el: "#id_end_date",
+  dateFormat: "yyyy-mm-dd",
+  closeOnBlur: true,
+  selectedDate: new Date(),
+});
+
+startDateInput.addEventListener("click", (evt) => {
+  startPicker.open();
+});
+
+endDateInput.addEventListener("click", (evt) => {
+  endPicker.open();
+});
