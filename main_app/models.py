@@ -13,6 +13,9 @@ class Dive(models.Model):
     def get_absolute_url(self):
         return reverse('dives_detail', kwargs={'dive_id': self.id})
 
+    class Meta:
+        ordering = ['-number']
+
 
 class Note(models.Model):
     note = models.TextField(max_length=250)
