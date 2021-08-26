@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% load static %} {% block head %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/trip-detail.css' %}"
+/>
+{% endblock %} {% block content %}
+
+<section class="trip-container">
+  <div class="trip-img">
+
+    <img src="{% static 'images/placeholder.png' %}" alt="placeholder image" />
+
+  </div>
+  <div class="trip-details">
+    <h1>{{ trip.destination }}</h1>
+    <h2>{{ trip.country }}</h2>
+    <h3>{{ trip.start_date }} - {{ trip.end_date }}</h3>
+    <div class="trip-actions">
+      <a href="{% url 'trips_update' trip.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'trips_delete' trip.id %}" class="btn danger">Delete</a>
+    </div>
+
+  </div>
+</section>
+
+
+{% endblock %}

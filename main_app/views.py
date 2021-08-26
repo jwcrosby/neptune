@@ -129,21 +129,6 @@ def add_photo(request, dive_id):
     return redirect('dives_detail', dive_id=dive_id)
 
 
-def signup(request):
-    error_message = ''
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect('dives_index')
-        else:
-            error_message = 'Invalid sign up - try again'
-    form = UserCreationForm()
-    context = {'form': form, 'error_message': error_message}
-    return render(request, 'signup.html', context)
-
-
 @login_required
 def trips_index(request):
     trips = Trip.objects.filter(user=request.user)
@@ -152,9 +137,9 @@ def trips_index(request):
 
 @login_required
 def trips_detail(request, trip_id):
-    trips = Trip.objects.get(id=trip_id)
+    trip = Trip.objects.get(id=trip_id)
     return render(request, 'trips/detail.html', {
-        'trips': trips
+        'trip': trip
     })
 
 
@@ -175,3 +160,18 @@ class TripUpdate(LoginRequiredMixin, UpdateView):
 class TripDelete(LoginRequiredMixin, DeleteView):
     model = Trip
     success_url = '/trips/'
+
+
+def signup(request):
+    error_message = ''
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('dives_index')
+        else:
+            error_message = 'Invalid sign up - try again'
+    form = UserCreationForm()
+    context = {'form': form, 'error_message': error_message}
+    return render(request, 'signup.html', context)
