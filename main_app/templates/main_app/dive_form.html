@@ -1,20 +1,14 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block head %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}"/>
-{% endblock %}
-
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}" />
+{% endblock %} {% block content %}
 
 <div class="page-header">
   <h1>Add a Dive</h1>
-  <img src="{% static 'images/helmet3.png' %}" alt="a diving helmet"/>
+  <img src="{% static 'images/helmet3.png' %}" alt="a diving helmet" />
 </div>
-{% comment %} 
-  Leaving the action empty makes the form post to the same url used to display it
-  This will need to be updated to the create url if alternative create form is used
-{% endcomment %}
+{% comment %} Leaving the action empty makes the form post to the same url used
+to display it This will need to be updated to the create url if alternative
+create form is used {% endcomment %}
 <form action="" method="post" class="form-container">
   {% csrf_token %}
   <table>

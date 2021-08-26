@@ -24,9 +24,11 @@ def dives_detail(request, dive_id):
         'dive': dive, 'note_form': note_form
     })
 
+
 class DiveCreate(CreateView):
     model = Dive
     fields = '__all__'
+
 
 def add_note(request, dive_id):
     form = NoteForm(request.POST)
