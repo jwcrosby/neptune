@@ -42,7 +42,7 @@ class Dive(models.Model):
     buddies = models.ManyToManyField(Buddy)
 
     def __str__(self):
-        return f"#{self.number}: {self.location}"
+        return f"#{self.number}: {self.site}"
 
     def get_absolute_url(self):
         return reverse('dives_detail', kwargs={'dive_id': self.id})
