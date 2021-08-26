@@ -1,3 +1,4 @@
+from django.views.generic import ListView, DetailView
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Dive, Buddy
@@ -56,3 +57,11 @@ def add_note(request, dive_id):
 class BuddyCreate(CreateView):
     model = Buddy
     fields = '__all__'
+
+
+class BuddyList(ListView):
+    model = Buddy
+
+
+class BuddyDetail(DetailView):
+    model = Buddy
