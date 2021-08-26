@@ -63,11 +63,11 @@ class BuddyDetail(DetailView):
     model = Buddy
 
 
-class ToyUpdate(UpdateView):
+class BuddyUpdate(UpdateView):
     model = Buddy
     fields = ['name', 'color']
 
 
-class ToyDelete(DeleteView):
+class BuddyDelete(DeleteView):
     model = Buddy
     success_url = '/buddies/'
