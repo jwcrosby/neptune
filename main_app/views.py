@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Dive
+from .models import Dive, Buddy
 from .forms import NoteForm
 
 
@@ -51,3 +51,8 @@ def add_note(request, dive_id):
         new_note.dive_id = dive_id
         new_note.save()
     return redirect('dives_detail', dive_id=dive_id)
+
+
+class BuddyCreate(CreateView):
+    model = Buddy
+    fields = '__all__'
