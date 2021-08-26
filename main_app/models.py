@@ -3,9 +3,26 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 
 
+class Trip(models.Model):
+    destination = models.CharField(max_length=100)
+    country = models.CharField(max_length=100, blank=True)
+    start_date = models.DateField('Start Date', blank=True)
+    end_date = models.DateField('End Date', blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Trip: {self.destination}, {self.country}_{self.start_date} - {self.end_date}"
+
+    def get_absolute_url(self):
+        return reverse('trips_detail', kwargs={'trip_id': self.id})
+
+    class Meta:
+        ordering = ['-start_date']
+
+
 class Buddy(models.Model):
-    name = models.CharField(max_length=50)
-    color = models.CharField(max_length=20)
+    name = models.CharField(max_length=50, blank=True)
+    color = models.CharField(max_length=20, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -17,10 +34,11 @@ class Buddy(models.Model):
 
 class Dive(models.Model):
     number = models.IntegerField('#')
-    date = models.DateField()
-    site = models.CharField(max_length=100)
-    max_depth = models.IntegerField()
+    date = models.DateField(blank=True)
+    site = models.CharField(max_length=100, blank=True)
+    max_depth = models.IntegerField(blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    trip = models.ForeignKey(Trip, blank=True, null=True, on_delete=models.SET_NULL)
     buddies = models.ManyToManyField(Buddy)
 
     def __str__(self):
@@ -50,20 +68,3 @@ class Photo(models.Model):
 
     def __str__(self):
         return f"Photo for dive_id: {self.dive_id} @{self.url}"
-
-
-class Trip(models.Model):
-    destination = models.CharField(max_length=100)
-    country = models.CharField(max_length=100)
-    start_date = models.DateField('Start Date')
-    end_date = models.DateField('End Date')
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return f"Trip: {self.destination}, {self.country}_{self.start_date} - {self.end_date}"
-
-    def get_absolute_url(self):
-        return reverse('trips_detail', kwargs={'trip_id': self.id})
-
-    class Meta:
-        ordering = ['-start_date']
