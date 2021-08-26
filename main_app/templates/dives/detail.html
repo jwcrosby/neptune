@@ -95,9 +95,9 @@
         <a href="{% url 'buddies_detail' buddy.id %}">
           <p>{{ buddy.name }}</p>
         </a>
-        <form action="" method="post">
+        <form action="{% url 'associate_buddy_with_dive' dive.id buddy.id %}" method="post">
           {% csrf_token %}
-          <button type="submit" class="btn submit">Attending</button>
+          <button type="submit" class="btn submit">+</button>
         </form>
       </div>
       {% endfor %} {% else %}

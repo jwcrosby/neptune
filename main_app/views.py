@@ -72,3 +72,7 @@ class BuddyUpdate(UpdateView):
 class BuddyDelete(DeleteView):
     model = Buddy
     success_url = '/buddies/'
+
+def associate_buddy_with_dive(request, dive_id, buddy_id):
+    Dive.objects.get(id=dive_id).buddies.add(buddy_id)
+    return redirect('dives_detail', dive_id=dive_id)
