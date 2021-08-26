@@ -13,4 +13,6 @@ urlpatterns = [
     path('buddies/create/', views.BuddyCreate.as_view(), name='buddies_create'),
     path('buddies/<int:pk>/', views.BuddyDetail.as_view(), name='buddies_detail'),
     path('buddies/', views.BuddyList.as_view(), name='buddies_index'),
+    path('buddies/<int:pk>/update/', views.BuddyUpdate.as_view(), name='buddies_update'),
+    path('buddies/<int:pk>/delete/', views.BuddyDelete.as_view(), name='buddies_delete'),
 ]

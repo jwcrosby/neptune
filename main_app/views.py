@@ -65,3 +65,13 @@ class BuddyList(ListView):
 
 class BuddyDetail(DetailView):
     model = Buddy
+
+
+class ToyUpdate(UpdateView):
+    model = Buddy
+    fields = ['name', 'color']
+
+
+class ToyDelete(DeleteView):
+    model = Buddy
+    success_url = '/buddies/'
