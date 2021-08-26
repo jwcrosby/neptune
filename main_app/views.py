@@ -20,7 +20,8 @@ def dives_index(request):
 
 def dives_detail(request, dive_id):
     dive = Dive.objects.get(id=dive_id)
-    buddies_not_currently_attending = Buddy.objects.exclude(id__in=dive.buddies.all().values_list('id'))
+    buddies_not_currently_attending = Buddy.objects.exclude(
+        id__in=dive.buddies.all().values_list('id'))
     note_form = NoteForm()
     return render(request, 'dives/detail.html', {
         'dive': dive, 'note_form': note_form, 'buddies_not_currently_attending': buddies_not_currently_attending
@@ -72,6 +73,7 @@ class BuddyUpdate(UpdateView):
 class BuddyDelete(DeleteView):
     model = Buddy
     success_url = '/buddies/'
+
 
 def associate_buddy_with_dive(request, dive_id, buddy_id):
     Dive.objects.get(id=dive_id).buddies.add(buddy_id)
