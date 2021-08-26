@@ -49,3 +49,21 @@ class Photo(models.Model):
 
     def __str__(self):
         return f"Photo for dive_id: {self.dive_id} @{self.url}"
+
+
+class Trip(models.Model):
+    start_date = models.DateField('Start Date')
+    end_date = models.DateField('End Date')
+    location1 = models.CharField('Location 1', max_length=100)
+    location2 = models.CharField('Location 2', max_length=100)
+    location3 = models.CharField('Location 3', max_length=100)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Trip: {self.location1}, {self.location2}_{self.start_date} - {self.end_date}"
+
+    def get_absolute_url(self):
+        return reverse('trips_detail', kwargs={'trip_id': self.id})
+
+    class Meta:
+        ordering = ['-start_date']
