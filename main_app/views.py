@@ -6,7 +6,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Dive, Buddy, Photo
+from .models import Dive, Buddy, Photo, Trip
 from .forms import NoteForm
 import boto3
 import uuid
@@ -142,3 +142,36 @@ def signup(request):
     form = UserCreationForm()
     context = {'form': form, 'error_message': error_message}
     return render(request, 'signup.html', context)
+
+
+@login_required
+def trips_index(request):
+    trips = Trip.objects.filter(user=request.user)
+    return render(request, 'trips/index.html', {'trips': trips})
+
+
+@login_required
+def trips_detail(request, trip_id):
+    trips = Trip.objects.get(id=trip_id)
+    return render(request, 'trips/detail.html', {
+        'trips': trips
+    })
+
+
+class TripCreate(LoginRequiredMixin, CreateView):
+    model = Trip
+    fields = '__all__'
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+
+class TripUpdate(LoginRequiredMixin, UpdateView):
+    model = Trip
+    fields = '__all__'
+
+
+class TripDelete(LoginRequiredMixin, DeleteView):
+    model = Trip
+    success_url = '/trips/'
