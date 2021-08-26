@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 class Buddy(models.Model):
     name = models.CharField(max_length=50)
     color = models.CharField(max_length=20)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -18,6 +19,7 @@ class Dive(models.Model):
     number = models.IntegerField('Dive Number')
     location = models.CharField(max_length=100)
     max_depth = models.IntegerField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     buddies = models.ManyToManyField(Buddy)
 
     def __str__(self):
@@ -32,6 +34,7 @@ class Dive(models.Model):
 
 class Note(models.Model):
     note = models.TextField(max_length=250)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     dive = models.ForeignKey(Dive, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -43,6 +46,7 @@ class Note(models.Model):
 
 class Photo(models.Model):
     url = models.CharField(max_length=250)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     dive = models.OneToOneField(Dive, on_delete=models.CASCADE)
 
     def __str__(self):
