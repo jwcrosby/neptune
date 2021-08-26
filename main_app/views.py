@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Dive
 from .forms import NoteForm
 
@@ -28,6 +28,17 @@ def dives_detail(request, dive_id):
 class DiveCreate(CreateView):
     model = Dive
     fields = '__all__'
+
+
+class DiveUpdate(UpdateView):
+    model = Dive
+    # Let's disallow the renaming of a cat by excluding the name field!
+    fields = ['location', 'max_depth']
+
+
+class DiveDelete(DeleteView):
+    model = Dive
+    success_url = '/dives/'
 
 
 def add_note(request, dive_id):
