@@ -1,0 +1,36 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block head %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/buddy-index.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <h1>Dive Buddies</h1>
+  <img src="{% static 'images/divebuddies.png' %}" alt="dive buddies" />
+  <img src="{% static 'images/2.svg' %}" alt="2" />
+  <img src="{% static 'images/3.svg' %}" alt="3" />
+  <img src="{% static 'images/4.svg' %}" alt="4" />
+</section>
+
+<section class="card-container">
+  {% for buddy in buddies %}
+  <div class="card" style="border-color: {{ buddy.color }}">
+    <div class="card-bg" style="background-color: {{ buddy.color }}"></div>
+    <a href="{% url 'buddies_detail' buddy.id %}">
+      <div class="card-content">
+        <h2>{{ buddy.name }}</h2>
+        <p>A {{ buddy.color }} buddy</p>
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</section>
+
+{% endblock %}

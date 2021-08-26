@@ -82,6 +82,12 @@ class BuddyList(LoginRequiredMixin, ListView):
     model = Buddy
 
 
+@login_required
+def buddies_index(request):
+    buddies = Buddy.objects.filter(user=request.user)
+    return render(request, 'buddies/index.html', {'buddies': buddies})
+
+
 class BuddyDetail(LoginRequiredMixin, DetailView):
     model = Buddy
 
