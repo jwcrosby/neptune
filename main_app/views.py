@@ -160,7 +160,7 @@ def trips_detail(request, trip_id):
 
 class TripCreate(LoginRequiredMixin, CreateView):
     model = Trip
-    fields = '__all__'
+    fields = ['destination', 'country', 'start_date', 'end_date']
 
     def form_valid(self, form):
         form.instance.user = self.request.user

@@ -52,14 +52,14 @@ class Photo(models.Model):
 
 
 class Trip(models.Model):
-    location = models.CharField('Location', max_length=100)
-    location2 = models.CharField('Location 2', max_length=100)
+    destination = models.CharField(max_length=100)
+    country = models.CharField(max_length=100)
     start_date = models.DateField('Start Date')
     end_date = models.DateField('End Date')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"Trip: {self.location1}, {self.location2}_{self.start_date} - {self.end_date}"
+        return f"Trip: {self.destination}, {self.country}_{self.start_date} - {self.end_date}"
 
     def get_absolute_url(self):
         return reverse('trips_detail', kwargs={'trip_id': self.id})
