@@ -22,7 +22,7 @@ def about(request):
 
 
 def dives_index(request):
-    dives = Dive.objects.all()
+    dives = Dive.objects.filter(user=request.user)
     return render(request, 'dives/index.html', {'dives': dives})
 
 
@@ -66,7 +66,7 @@ def add_note(request, dive_id):
 
 class BuddyCreate(CreateView):
     model = Buddy
-    fields = '__all__'
+    fields = ['name', 'color']
 
     def form_valid(self, form):
         form.instance.user = self.request.user
