@@ -39,7 +39,7 @@ class Dive(models.Model):
     max_depth = models.IntegerField(blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     trip = models.ForeignKey(Trip, blank=True, null=True, on_delete=models.SET_NULL)
-    buddies = models.ManyToManyField(Buddy)
+    buddies = models.ManyToManyField(Buddy, blank=True)
 
     def __str__(self):
         return f"#{self.number}: {self.site}"
