@@ -52,11 +52,10 @@ class Photo(models.Model):
 
 
 class Trip(models.Model):
+    location = models.CharField('Location', max_length=100)
+    location2 = models.CharField('Location 2', max_length=100)
     start_date = models.DateField('Start Date')
     end_date = models.DateField('End Date')
-    location1 = models.CharField('Location 1', max_length=100)
-    location2 = models.CharField('Location 2', max_length=100)
-    location3 = models.CharField('Location 3', max_length=100)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
