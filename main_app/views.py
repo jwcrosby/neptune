@@ -169,7 +169,7 @@ class TripCreate(LoginRequiredMixin, CreateView):
 
 class TripUpdate(LoginRequiredMixin, UpdateView):
     model = Trip
-    fields = '__all__'
+    fields = ['destination', 'country', 'start_date', 'end_date']
 
 
 class TripDelete(LoginRequiredMixin, DeleteView):
