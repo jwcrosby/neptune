@@ -1,6 +1,7 @@
 from django.views.generic import ListView, DetailView
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.contrib.auth.views import LoginView
 from .models import Dive, Buddy, Photo
 from .forms import NoteForm
 import boto3
@@ -10,8 +11,8 @@ S3_BASE_URL = "https://s3.us-west-1.amazonaws.com/"
 BUCKET = 'neptune-jwc'
 
 
-def home(request):
-    return render(request, 'home.html')
+class Home(LoginView):
+    template_name = 'home.html'
 
 
 def about(request):
