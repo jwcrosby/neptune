@@ -21,11 +21,19 @@
       <a href="{% url 'dives_detail' dive.id %}"">
         <div class="card-content">
           <div class="card-img-container">
-            <img 
-              src="{% static 'images/placeholder.png' %}" 
-              alt="placeholder image"
-              class="card-img"
-            >
+            {% if dive.photo.url %}
+              <img 
+                src="{{dive.photo.url}}" 
+                alt="A photo of {{dive.number}}"
+                class="usr-img"
+              >
+            {% else %}
+              <img 
+                src="{% static 'images/placeholder.png' %}" 
+                alt="placeholder image"
+                class="card-img"
+              >
+            {% endif %}
           </div>
           <h2 class="card-title">#{{ dive.number }}</h2>
             <p>{{ dive.location }}</p>
