@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Dive(models.Model):
   number = models.IntegerField('Dive Number')
@@ -7,6 +8,9 @@ class Dive(models.Model):
 
   def __str__(self):
     return f"#{self.number}: {self.location}"
+
+  def get_absolute_url(self):
+    return reverse('dives_detail', kwargs={'dive_id': self.id})
 
 class Note(models.Model):
   note = models.TextField(max_length=250)
