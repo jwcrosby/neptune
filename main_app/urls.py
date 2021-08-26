@@ -11,4 +11,6 @@ urlpatterns = [
     path('dives/<int:pk>/delete/', views.DiveDelete.as_view(), name='dives_delete'),
     path('dives/<int:dive_id>/add_note/', views.add_note, name='add_note'),
     path('buddies/create/', views.BuddyCreate.as_view(), name='buddies_create'),
+    path('buddies/<int:pk>/', views.BuddyDetail.as_view(), name='buddies_detail'),
+    path('buddies/', views.BuddyList.as_view(), name='buddies_index'),
 ]
