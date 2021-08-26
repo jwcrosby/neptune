@@ -33,7 +33,6 @@ class DiveCreate(CreateView):
 
 class DiveUpdate(UpdateView):
     model = Dive
-    # Let's disallow the renaming of a cat by excluding the name field!
     fields = ['location', 'max_depth']
 
 
@@ -44,10 +43,7 @@ class DiveDelete(DeleteView):
 
 def add_note(request, dive_id):
     form = NoteForm(request.POST)
-    # validate the form
     if form.is_valid():
-        # don't save the form to the db until it
-        # has the cat_id assigned
         new_note = form.save(commit=False)
         new_note.dive_id = dive_id
         new_note.save()
