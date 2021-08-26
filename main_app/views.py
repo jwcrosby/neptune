@@ -35,7 +35,7 @@ def dives_detail(request, dive_id):
 
 class DiveCreate(CreateView):
     model = Dive
-    fields = ['number', 'location', 'max depth']
+    fields = ['number', 'location', 'max_depth']
 
 
 class DiveUpdate(UpdateView):
