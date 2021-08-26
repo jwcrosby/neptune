@@ -1,21 +1,23 @@
 from django.db import models
 from django.urls import reverse
 
+
 class Buddy(models.Model):
-  name = models.CharField(max_length=50)
-  color = models.CharField(max_length=20)
+    name = models.CharField(max_length=50)
+    color = models.CharField(max_length=20)
 
-  def __str__(self):
-    return self.name
+    def __str__(self):
+        return self.name
 
-  def get_absolute_url(self):
-    return reverse('buddies_detail', kwargs={'pk': self.id})
+    def get_absolute_url(self):
+        return reverse('buddies_detail', kwargs={'pk': self.id})
 
 
 class Dive(models.Model):
     number = models.IntegerField('Dive Number')
     location = models.CharField(max_length=100)
     max_depth = models.IntegerField()
+    buddies = models.ManyToManyField(Buddy)
 
     def __str__(self):
         return f"#{self.number}: {self.location}"
