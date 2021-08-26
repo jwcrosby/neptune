@@ -6,6 +6,7 @@ const startPicker = MCDatepicker.create({
   dateFormat: "yyyy-mm-dd",
   closeOnBlur: true,
   selectedDate: new Date(),
+  autoClose: true,
 });
 
 const endPicker = MCDatepicker.create({
@@ -13,6 +14,7 @@ const endPicker = MCDatepicker.create({
   dateFormat: "yyyy-mm-dd",
   closeOnBlur: true,
   selectedDate: new Date(),
+  autoClose: true,
 });
 
 startDateInput.addEventListener("click", (evt) => {

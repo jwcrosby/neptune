@@ -7,6 +7,7 @@ const picker = MCDatepicker.create({
   dateFormat: "yyyy-mm-dd",
   closeOnBlur: true,
   selectedDate: new Date(),
+  autoClose: true,
 });
 
 dateInput.addEventListener("click", (evt) => {
