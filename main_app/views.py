@@ -4,6 +4,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Dive, Buddy, Photo
 from .forms import NoteForm
 import boto3
@@ -21,11 +23,13 @@ def about(request):
     return render(request, 'about.html')
 
 
+@login_required
 def dives_index(request):
     dives = Dive.objects.filter(user=request.user)
     return render(request, 'dives/index.html', {'dives': dives})
 
 
+@login_required
 def dives_detail(request, dive_id):
     dive = Dive.objects.get(id=dive_id)
     buddies_not_currently_attending = Buddy.objects.exclude(
@@ -36,7 +40,7 @@ def dives_detail(request, dive_id):
     })
 
 
-class DiveCreate(CreateView):
+class DiveCreate(LoginRequiredMixin, CreateView):
     model = Dive
     fields = ['number', 'location', 'max_depth']
 
@@ -45,16 +49,17 @@ class DiveCreate(CreateView):
         return super().form_valid(form)
 
 
-class DiveUpdate(UpdateView):
+class DiveUpdate(LoginRequiredMixin, UpdateView):
     model = Dive
     fields = ['location', 'max_depth']
 
 
-class DiveDelete(DeleteView):
+class DiveDelete(LoginRequiredMixin, DeleteView):
     model = Dive
     success_url = '/dives/'
 
 
+@login_required
 def add_note(request, dive_id):
     form = NoteForm(request.POST)
     if form.is_valid():
@@ -64,7 +69,7 @@ def add_note(request, dive_id):
     return redirect('dives_detail', dive_id=dive_id)
 
 
-class BuddyCreate(CreateView):
+class BuddyCreate(LoginRequiredMixin, CreateView):
     model = Buddy
     fields = ['name', 'color']
 
@@ -73,29 +78,31 @@ class BuddyCreate(CreateView):
         return super().form_valid(form)
 
 
-class BuddyList(ListView):
+class BuddyList(LoginRequiredMixin, ListView):
     model = Buddy
 
 
-class BuddyDetail(DetailView):
+class BuddyDetail(LoginRequiredMixin, DetailView):
     model = Buddy
 
 
-class BuddyUpdate(UpdateView):
+class BuddyUpdate(LoginRequiredMixin, UpdateView):
     model = Buddy
     fields = ['name', 'color']
 
 
-class BuddyDelete(DeleteView):
+class BuddyDelete(LoginRequiredMixin, DeleteView):
     model = Buddy
     success_url = '/buddies/'
 
 
+@login_required
 def associate_buddy_with_dive(request, dive_id, buddy_id):
     Dive.objects.get(id=dive_id).buddies.add(buddy_id)
     return redirect('dives_detail', dive_id=dive_id)
 
 
+@login_required
 def add_photo(request, dive_id):
     # photo-file will be the "name" attribute on the <input type="file">
     photo_file = request.FILES.get('photo-file', None)
