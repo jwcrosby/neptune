@@ -8,7 +8,15 @@
 
 <section class="dive-container">
   <div class="dive-img">
+    {% if dive.photo.url %}
+    <img
+      src="{{dive.photo.url}}"
+      alt="A photo of {{dive.number}}"
+      class="usr-img"
+    />
+    {% else %}
     <img src="{% static 'images/placeholder.png' %}" alt="placeholder image" />
+    {% endif %}
   </div>
   <div class="dive-details">
     <h1>{{ dive.number }}</h1>
@@ -18,6 +26,21 @@
       <a href="{% url 'dives_update' dive.id %}" class="btn warn">Edit</a>
       <a href="{% url 'dives_delete' dive.id %}" class="btn danger">Delete</a>
     </div>
+
+    <h3>Change dive photo</h3>
+    <p id="file-name"></p>
+    <form
+      action="{% url 'add_photo' dive.id %}"
+      enctype="multipart/form-data"
+      method="POST"
+    >
+      {% csrf_token %}
+      <label class="btn secondary">
+        Choose photo
+        <input type="file" name="photo-file" id="file-input" />
+      </label>
+      <button type="submit" class="btn submit">Upload Photo</button>
+    </form>
   </div>
 </section>
 
@@ -86,7 +109,7 @@
     <h3>Available</h3>
     <div class="subsection-content">
       {% if buddies_not_currently_attending.count %} 
-      {% for buddy in buddies_not_currently_attending.all %}
+        {% for buddy in buddies_not_currently_attending.all %}
       <div class="buddy-container">
         <div
           class="color-block"
@@ -95,12 +118,16 @@
         <a href="{% url 'buddies_detail' buddy.id %}">
           <p>{{ buddy.name }}</p>
         </a>
-        <form action="{% url 'associate_buddy_with_dive' dive.id buddy.id %}" method="post">
+        <form
+          action="{% url 'associate_buddy_with_dive' dive.id buddy.id %}"
+          method="post"
+        >
           {% csrf_token %}
           <button type="submit" class="btn submit">+</button>
         </form>
       </div>
-      {% endfor %} {% else %}
+        {% endfor %} 
+      {% else %}
       <p class="all-buddies">All available buddies already attending 🥳</p>
       {% endif %}
     </div>
