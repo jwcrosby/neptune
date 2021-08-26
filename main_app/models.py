@@ -34,6 +34,9 @@ class Buddy(models.Model):
     def get_absolute_url(self):
         return reverse('buddies_detail', kwargs={'pk': self.id})
 
+    class Meta:
+        ordering = ['name']
+
 
 class Dive(models.Model):
     number = models.IntegerField('#')
