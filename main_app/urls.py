@@ -17,4 +17,5 @@ urlpatterns = [
     path('buddies/', views.BuddyList.as_view(), name='buddies_index'),
     path('buddies/<int:pk>/update/', views.BuddyUpdate.as_view(), name='buddies_update'),
     path('buddies/<int:pk>/delete/', views.BuddyDelete.as_view(), name='buddies_delete'),
+    path('accounts/signup/', views.signup, name='signup'),
 ]
