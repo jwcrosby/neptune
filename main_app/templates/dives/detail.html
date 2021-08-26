@@ -20,7 +20,7 @@
   </div>
   <div class="dive-details">
     <h1>{{ dive.number }}</h1>
-    <h2>{{ dive.location }}</h2>
+    <h2>{{ dive.site }}</h2>
     <h3>Max depth: {{ dive.max_depth }} ft</h3>
     <div class="dive-actions">
       <a href="{% url 'dives_update' dive.id %}" class="btn warn">Edit</a>

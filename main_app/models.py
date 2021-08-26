@@ -16,8 +16,9 @@ class Buddy(models.Model):
 
 
 class Dive(models.Model):
-    number = models.IntegerField('Dive Number')
-    location = models.CharField(max_length=100)
+    number = models.IntegerField('#')
+    date = models.DateField()
+    site = models.CharField(max_length=100)
     max_depth = models.IntegerField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     buddies = models.ManyToManyField(Buddy)
