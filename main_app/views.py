@@ -1,8 +1,13 @@
 from django.views.generic import ListView, DetailView
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Dive, Buddy
+from .models import Dive, Buddy, Photo
 from .forms import NoteForm
+import boto3
+import uuid
+
+S3_BASE_URL = "https://s3.us-west-1.amazonaws.com/"
+BUCKET = 'neptune-jwc'
 
 
 def home(request):
@@ -77,4 +82,30 @@ class BuddyDelete(DeleteView):
 
 def associate_buddy_with_dive(request, dive_id, buddy_id):
     Dive.objects.get(id=dive_id).buddies.add(buddy_id)
+    return redirect('dives_detail', dive_id=dive_id)
+
+
+def add_photo(request, dive_id):
+    # photo-file will be the "name" attribute on the <input type="file">
+    photo_file = request.FILES.get('photo-file', None)
+    if photo_file:
+        s3 = boto3.client('s3')
+    # need a unique "key" for S3 / needs image file extension too
+        # uuid.uuid4().hex generates a random hexadecimal Universally Unique Identifier
+    # Add on the file extension using photo_file.name[photo_file.name.rfind('.'):]
+        key = uuid.uuid4().hex + photo_file.name[photo_file.name.rfind('.'):]
+        # just in case something goes wrong
+        try:
+            s3.upload_fileobj(photo_file, BUCKET, key)
+            # build the full url string
+            url = f"{S3_BASE_URL}{BUCKET}/{key}"
+            # we can assign to dive_id or dive (if you have a dive object)
+            photo = Photo(url=url, dive_id=dive_id)
+            # Remove old photo if it exists
+            dive_photo = Photo.objects.filter(dive_id=dive_id)
+            if dive_photo.first():
+                dive_photo.first().delete()
+            photo.save()
+        except Exception as err:
+            print('An error occurred uploading file to S3: %s' % err)
     return redirect('dives_detail', dive_id=dive_id)
