@@ -60,34 +60,49 @@
     {% endif %}
   </section>
 
-    <section class="buddies">
+  <section class="buddies">
     <div class="subsection-title">
       <h2>Dive Buddies</h2>
-      <img src="{% static 'images/divebuddies.png' %}" alt="dive buddies"/>
+      <img src="{% static 'images/divebuddies.png' %}" alt="dive buddies" />
       <img src="{% static 'images/3.png' %}" alt="3" />
       <img src="{% static 'images/4.png' %}" alt="4" />
     </div>
     <h3>Attending</h3>
     <div class="subsection-content">
-      {% if dive.buddies.count %}
-        {% for buddy in dive.buddies.all %}
-          <div class="buddy-container">
-            <div 
-              class="color-block"
-              style="background-color: {{ buddy.color }}"
-            ></div>
-            <a href="{% url 'buddies_detail' buddy.id %}">
-              <p>A {{ buddy.color }} {{ buddy.name }}</p>
-            </a>
-          </div>
-        {% endfor %}
-      {% else %}
-        <p class="no-buddies">This dive doesn't have any buddies 😞</p>
+      {% if dive.buddies.count %} {% for buddy in dive.buddies.all %}
+      <div class="buddy-container">
+        <div
+          class="color-block"
+          style="background-color: {{ buddy.color }}"
+        ></div>
+        <a href="{% url 'buddies_detail' buddy.id %}">
+          <p>{{ buddy.name }}</p>
+        </a>
+      </div>
+      {% endfor %} {% else %}
+      <p class="no-buddies">This dive doesn't have any buddies 😞</p>
       {% endif %}
     </div>
     <h3>Available</h3>
     <div class="subsection-content">
-      {% comment %} We'll display available buddies here {% endcomment %}
+      {% if buddies_not_currently_attending.count %} 
+      {% for buddy in buddies_not_currently_attending.all %}
+      <div class="buddy-container">
+        <div
+          class="color-block"
+          style="background-color: {{ buddy.color }}"
+        ></div>
+        <a href="{% url 'buddies_detail' buddy.id %}">
+          <p>{{ buddy.name }}</p>
+        </a>
+        <form action="" method="post">
+          {% csrf_token %}
+          <button type="submit" class="btn submit">Attending</button>
+        </form>
+      </div>
+      {% endfor %} {% else %}
+      <p class="all-buddies">All available buddies already attending 🥳</p>
+      {% endif %}
     </div>
   </section>
 </div>

@@ -20,10 +20,10 @@ def dives_index(request):
 
 def dives_detail(request, dive_id):
     dive = Dive.objects.get(id=dive_id)
-    buddies_dive_doesnt_have = Buddy.objects.exclude(id__in=dive.buddies.all().values_list('id'))
+    buddies_not_currently_attending = Buddy.objects.exclude(id__in=dive.buddies.all().values_list('id'))
     note_form = NoteForm()
     return render(request, 'dives/detail.html', {
-        'dive': dive, 'note_form': note_form, 'buddies_dive_doesnt_have': buddies_dive_doesnt_have
+        'dive': dive, 'note_form': note_form, 'buddies_not_currently_attending': buddies_not_currently_attending
     })
 
 
