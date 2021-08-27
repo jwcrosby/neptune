@@ -6,18 +6,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" /> {% endcomment %}
     <link
       rel="shortcut icon"
       type="image/png"
       href="{% static 'images/helmet3.png' %}"
     />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
     <title>Neptune</title>
     {% block head %} {% endblock %}
   </head>
   <body>
     <header>
-      <div class="header-logo-container">
+      {% comment %} <div class="header-logo-container">
         <a href="/">
           <img
             src="{% static 'images/helmet3.png' %}"
@@ -25,26 +26,64 @@
             class="logo-image"
           />
         </a>
+      </div> {% endcomment %}
+
+<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+            <img src="{% static 'images/helmet3.png' %}" alt="logo" width="30" height="30" class="d-inline-block align-text-top">
+            neptune
+          </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ml-auto">
+        {% if user.is_authenticated %}
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link" href="{% url 'dives_index' %}">Dives</a>
+        <a class="nav-link" href="{% url 'trips_index' %}">Trips</a>
+        <a class="nav-link" href="{% url 'buddies_index' %}">Buddies</a>
+        <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+
+        {% else %}
+        <a class="nav-link" href="{% url 'about' %}">About</a>
+        <a class="nav-link" href="{% url 'home' %}">Login</a>
+        <a class="nav-link" href="{% url 'signup' %}">Log Out</a>
+        {% endif %}
       </div>
-      <nav>
-        <ul>
-          {% if user.is_authenticated %}
-            <li><a href="{% url 'dives_index' %}">My Dives</a></li>
-            <li><a href="{% url 'dives_create' %}">Add a Dive</a></li>
-            <li><a href="{% url 'trips_index' %}">My Trips</a></li>
-            <li><a href="{% url 'trips_create' %}">Add a Trip</a></li>
-            <li><a href="{% url 'buddies_index' %}">My Dive Buddies</a></li>
-            <li><a href="{% url 'buddies_create' %}">Add a Dive Buddy</a></li>
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'logout' %}">Log out</a></li>
-          {% else %}
-            <li><a href="{% url 'about' %}">About</a></li>
-            <li><a href="{% url 'home' %}">Login</a></li>
-            <li><a href="{% url 'signup' %}">Sign Up</a></li>
-          {% endif %}
-        </ul>
+    </div>
+  </div>
+</nav>
+
+    </header>
+    <main>{% block content %} {% endblock %}</main>
+  </body>
+</html> 
+
+
+{% comment %} 
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <ul class="navbar-nav">
+            {% if user.is_authenticated %}
+              <li class="nav-item"><a href="{% url 'dives_index' %}">My Dives</a></li>
+              <li class="nav-item"><a href="{% url 'dives_create' %}">Add a Dive</a></li>
+              <li class="nav-item"><a href="{% url 'trips_index' %}">My Trips</a></li>
+              <li class="nav-item"><a href="{% url 'trips_create' %}">Add a Trip</a></li>
+              <li class="nav-item"><a href="{% url 'buddies_index' %}">My Dive Buddies</a></li>
+              <li class="nav-item"><a href="{% url 'buddies_create' %}">Add a Dive Buddy</a></li>
+              <li class="nav-item"><a href="{% url 'about' %}">About</a></li>
+              <li class="nav-item"><a href="{% url 'logout' %}">Log out</a></li>
+            {% else %}
+              <li class="nav-item"><a href="{% url 'about' %}">About</a></li>
+              <li class="nav-item"><a href="{% url 'home' %}">Login</a></li>
+              <li class="nav-item"><a href="{% url 'signup' %}">Sign Up</a></li>
+            {% endif %}
+          </ul>
+        <div class="container-fluid">
       </nav>
     </header>
     <main>{% block content %} {% endblock %}</main>
   </body>
-</html>
+</html> {% endcomment %}

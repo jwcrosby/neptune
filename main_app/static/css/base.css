@@ -33,7 +33,7 @@ body {
   --link-hover-color: rgb(16, 56, 158);
   --button-bg: rgb(245, 245, 245);
   --button-bg-hover: rgb(226, 226, 226);
-  --submit: rgb(26, 128, 0);
+  --submit: rgb(75, 128, 0);
   --warn: rgb(255, 102, 0);
   --danger: rgb(220, 20, 30);
   --secondary: rgb(57, 57, 57);
@@ -53,9 +53,9 @@ header {
   border-bottom: var(--borders);
 }
 
-nav {
+/* nav {
   margin: 10px;
-}
+} */
 
 ul {
   margin: 0;
@@ -67,7 +67,7 @@ main {
   width: 100%;
 }
 
-nav a {
+/* nav a {
   text-decoration: none;
   color: var(--text-color);
   font-weight: 600;
@@ -87,7 +87,7 @@ nav ul {
 
 nav li {
   padding: 5px 8px;
-}
+} */
 
 .header-logo-container {
   margin: auto;
@@ -96,7 +96,7 @@ nav li {
 }
 
 .logo-image {
-  max-width: 100px;
+  max-width: 80px;
 }
 
 .page-header {
@@ -171,7 +171,7 @@ nav li {
     min-height: calc(100vh - 53px);
   }
 
-  nav,
+  /* nav, */
   .header-logo-container {
     margin: 10px 0;
     padding: 0 15px;
@@ -181,7 +181,7 @@ nav li {
   .header-logo-container {
     padding-top: 3px;
   }
-
+/* 
   nav {
     margin-left: auto;
     display: flex;
@@ -190,7 +190,7 @@ nav li {
 
   nav ul {
     flex-wrap: nowrap;
-  }
+  } */
 
   .header-logo-container {
     width: 213px;
@@ -232,17 +232,17 @@ nav li {
     border-bottom: none;
   }
 
-  nav,
-  .header-logo-container {
+  /* nav {
     margin: 0;
     background: var(--nav-bg-ff);
     border: var(--borders);
     border-radius: 18px;
   }
 
+
   nav {
     margin-left: auto;
-  }
+  } */
 
   .header-logo-container {
     /* visual fix to help align logo */
@@ -257,7 +257,7 @@ nav li {
       backdrop-filter: none;
     }
 
-    nav,
+    /* nav, */
     .header-logo-container {
       background: rgba(104, 197, 248, .6);
       -webkit-backdrop-filter: blur(3px);
