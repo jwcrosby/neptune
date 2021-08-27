@@ -10,7 +10,7 @@ class Trip(models.Model):
     start_date = models.DateField('Start Date', blank=True)
     end_date = models.DateField('End Date', blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    created_date = models.DateTimeField(default=timezone.now())
+    created_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return f"Trip: {self.destination}, {self.country}_{self.start_date} - {self.end_date}"
@@ -26,7 +26,7 @@ class Buddy(models.Model):
     name = models.CharField(max_length=50, blank=True)
     color = models.CharField(max_length=20, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    created_date = models.DateTimeField(default=timezone.now())
+    created_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.name
@@ -46,7 +46,7 @@ class Dive(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     trip = models.ForeignKey(Trip, blank=True, null=True, on_delete=models.SET_NULL)
     buddies = models.ManyToManyField(Buddy, blank=True)
-    created_date = models.DateTimeField(default=timezone.now())
+    created_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return f"#{self.number}: {self.site}"
@@ -61,7 +61,7 @@ class Dive(models.Model):
 class Note(models.Model):
     note = models.TextField(max_length=250)
     dive = models.ForeignKey(Dive, on_delete=models.CASCADE)
-    created_date = models.DateTimeField(default=timezone.now())
+    created_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return f"Note: {self.note}"
@@ -73,7 +73,7 @@ class Note(models.Model):
 class Photo(models.Model):
     url = models.CharField(max_length=250)
     dive = models.OneToOneField(Dive, on_delete=models.CASCADE)
-    created_date = models.DateTimeField(default=timezone.now())
+    created_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return f"Photo for dive_id: {self.dive_id} @{self.url}"
