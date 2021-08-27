@@ -27,8 +27,8 @@ body {
     sans-serif;
   min-height: 100vh;
   --nav-bg: rgba(104, 197, 248, .7);
-  --nav-bg-ff: rgba(104, 197, 248, .9);
-  --borders: rgb(36, 116, 248) solid 2px;
+  --nav-bg-ff: rgba(37, 41, 47, .9);
+  --borders: rgb(33, 37, 43) solid 2px;
   --text-color: rgb(17, 20, 17);
   --link-hover-color: rgb(16, 56, 158);
   --button-bg: rgb(245, 245, 245);
@@ -53,9 +53,16 @@ header {
   border-bottom: var(--borders);
 }
 
-/* nav {
-  margin: 10px;
-} */
+.nav-bar-extended {
+  background: #25292D;
+}
+
+.navbar-brand {
+  font-size: 2.1rem;
+}
+.nav-link {
+  font-size: 1.6rem;
+}
 
 ul {
   margin: 0;
@@ -67,33 +74,6 @@ main {
   width: 100%;
 }
 
-/* nav a {
-  text-decoration: none;
-  color: var(--text-color);
-  font-weight: 600;
-  font-size: 16px;
-}
-
-nav a:hover {
-  color: var(--link-hover-color)
-}
-
-nav ul {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-nav li {
-  padding: 5px 8px;
-} */
-
-.header-logo-container {
-  margin: auto;
-  padding: 10px 20px 0;
-  max-width: 500px;
-}
 
 .logo-image {
   max-width: 80px;
@@ -158,43 +138,12 @@ nav li {
 }
 
 @media only screen and (min-width: 768px) {
-  header {
-    position: sticky;
-    display: flex;
-    flex-direction: row;
-    top: 0;
-    align-items: center;
-  }
 
   main {
     max-width: 1300px;
     min-height: calc(100vh - 53px);
   }
 
-  /* nav, */
-  .header-logo-container {
-    margin: 10px 0;
-    padding: 0 15px;
-  }
-
-  /* visual fix to help align logo */
-  .header-logo-container {
-    padding-top: 3px;
-  }
-/* 
-  nav {
-    margin-left: auto;
-    display: flex;
-    justify-content: center;
-  }
-
-  nav ul {
-    flex-wrap: nowrap;
-  } */
-
-  .header-logo-container {
-    width: 213px;
-  }
 
   .page-header h1 {
     font-size: var(--font-xtreme);
@@ -224,44 +173,13 @@ nav li {
   }
   
   header {
-    margin: 20px 20px 0 20px;
-    width: calc(100vw - 40px);
-    max-width: 1920px;
-    top: 20px;
     background-color: transparent;
-    border-bottom: none;
-  }
-
-  /* nav {
-    margin: 0;
-    background: var(--nav-bg-ff);
-    border: var(--borders);
-    border-radius: 18px;
-  }
-
-
-  nav {
-    margin-left: auto;
-  } */
-
-  .header-logo-container {
-    /* visual fix to help align logo */
-    padding-top: 6px;
-    width: 256px;
-    height: 35px;
   }
 
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
     header {
       -webkit-backdrop-filter: none;
       backdrop-filter: none;
-    }
-
-    /* nav, */
-    .header-logo-container {
-      background: rgba(104, 197, 248, .6);
-      -webkit-backdrop-filter: blur(3px);
-      backdrop-filter: blur(3px);
     }
   }
 }
