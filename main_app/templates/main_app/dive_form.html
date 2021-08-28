@@ -4,7 +4,7 @@
   rel="stylesheet"
 />
 <script src="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.js"></script>
-<link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/dive-form.css' %}" />
 <script defer src="{% static 'js/dive-detail.js' %}"></script>
 {% endblock %} {% block content %}
 
@@ -14,16 +14,42 @@
   {% else %}
   <h1>Add a Dive</h1>
   {% endif %}
-  <img src="{% static 'images/helmet3.png' %}" alt="a diving helmet" />
+  <img src="{% static 'images/024-diving.svg' %}" alt="a diving log" />
 </div>
-{% comment %} Leaving the action empty makes the form post to the same url used
-to display it This will need to be updated to the create url if alternative
-create form is used {% endcomment %}
+
 <form action="" method="post" class="form-container">
   {% csrf_token %}
-  <table>
-    {{ form.as_table }}
-  </table>
+
+  <div class="questions question-main">
+    <div class="sub-header">
+      <h2>Main</h2>
+      <img src="{% static 'images/024-diving.svg' %}" alt="a diving log" />
+    </div>
+  </div>
+    <table>
+    <div class="main-field-header">
+      <h3>Main</h3>
+      <img src="{% static 'images/024-diving.svg' %}" alt="a diving log" />
+    </div>
+      <div class="field-wrapper">
+        {{ form.number.errors }}
+        {{ form.number.label_tag }}
+        <tr>{{ form.number }}</tr>
+      </div>
+      <div class="field-wrapper">
+        {{ form.date.errors }}
+        {{ form.date.label_tag }}
+        <tr>{{ form.date }}</tr>
+      </div>
+      <div class="field-wrapper">
+        {{ form.site.errors }}
+        {{ form.site.label_tag }}
+        <tr>{{ form.site }}</tr>
+      </div>
+    </table>
+  </div>
+
+
   <button type="submit" class="btn submit">Submit!</button>
 </form>
 

@@ -39,10 +39,10 @@ class Buddy(models.Model):
 
 
 class Dive(models.Model):
-    number = models.IntegerField('#')
-    date = models.DateField(blank=True)
-    site = models.CharField(max_length=100, blank=True)
-    max_depth = models.IntegerField(blank=True)
+    number = models.IntegerField('Dive #')
+    date = models.DateField(blank=True, null=True)
+    site = models.CharField(max_length=100, blank=True, null=True)
+    max_depth = models.IntegerField('Max Depth', blank=True, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     trip = models.ForeignKey(Trip, blank=True, null=True, on_delete=models.SET_NULL)
     buddies = models.ManyToManyField(Buddy, blank=True)
