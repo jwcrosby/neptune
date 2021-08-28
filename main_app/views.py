@@ -42,7 +42,7 @@ def dives_detail(request, dive_id):
 
 class DiveCreate(LoginRequiredMixin, CreateView):
     model = Dive
-    fields = ['number', 'date', 'trip', 'site', 'depth_avg']
+    fields = ['suit_desc', 'suit_thickness', 'suit_notes', 'purpose', 'weather', 'bottom_time', 'acc_bottom_time', 'safety_stop_depth', 'safety_stop_time', 'number', 'date', 'site', 'trip', 'depth_avg', 'depth_max', 'bottom_time', 'temperature_air', 'temperature_surface', 'temperature_bottom', 'visibility', 'air_start', 'air_end', 'air_choice', 'weight', 'weight_rating']
 
     def form_valid(self, form):
         form.instance.user = self.request.user

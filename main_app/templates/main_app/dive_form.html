@@ -14,116 +14,220 @@
   {% else %}
   <h1>Add a Dive</h1>
   {% endif %}
-  <img src="{% static 'images/016-diver.svg' %}" alt="a diving log" />
+  {% comment %} <img src="{% static 'images/016-diver.svg' %}" alt="a diving log" /> {% endcomment %}
 </div>
 
 <form action="" method="post" class="form-container">
   {% csrf_token %}
 
+
+
   <div class="questions question-main">
-    <table>
-      <div class="field-wrapper">
-        {{ form.number.errors }}
-        <div class="sub-header">
-          <h3>{{ form.number.label_tag }}</h3>
-        </div>
-        <tr>{{ form.number }}</tr>
+    <div class="field-wrapper">
+      {{ form.number.errors }}
+      <div class="sub-header">
+        <h3>{{ form.number.label_tag }}</h3>
       </div>
-      <div class="field-wrapper">
-        {{ form.date.errors }}
-        <div class="sub-header">
-          <h3>{{ form.date.label_tag }}</h3>
-          <img src="{% static 'images/020-diving.svg' %}" alt="a diving log" />
-        </div>
-        <tr>{{ form.date }}</tr>
+      {{ form.number }}
+    </div>
+    <div class="field-wrapper">
+      {{ form.date.errors }}
+      <div class="sub-header">
+        <h3>{{ form.date.label_tag }}</h3>
+        <img src="{% static 'images/020-diving.svg' %}" alt="a diving log" />
       </div>
-      <div class="field-wrapper">
-        {{ form.site.errors }}
-        <div class="sub-header">
-          <h3>{{ form.site.label_tag }}</h3>
-          <img src="{% static 'images/018-diving.svg' %}" alt="a diving log" />
-        </div>
-        <tr>{{ form.site }}</tr>
+      <tr>{{ form.date }}</tr>
+    </div>
+    <div class="field-wrapper">
+      {{ form.site.errors }}
+      <div class="sub-header">
+        <h3>{{ form.site.label_tag }}</h3>
+        <img src="{% static 'images/018-diving.svg' %}" alt="a diving log" />
       </div>
-    </table>
+      <tr>{{ form.site }}</tr>
+    </div>
+    <div class="field-wrapper">
+      {{ form.trip.errors }}
+      <div class="sub-header">
+        <h3>{{ form.trip.label_tag }}</h3>
+        <img src="{% static 'images/023-divers.svg' %}" alt="a diving log" />
+      </div>
+      <tr>{{ form.trip }}</tr>
+    </div>
   </div>
 
-
-
-  <div class="questions question-main">
+  <div class="questions question-info">
     <div class="sub-header">
-      <h2>Main</h2>
+      <h2>Info</h2>
       <img src="{% static 'images/024-diving.svg' %}" alt="a diving log" />
     </div>
-    <table>
-      <div class="field-wrapper">
-        {{ form.number.errors }}
-        {{ form.number.label_tag }}
-        <tr>{{ form.number }}</tr>
-      </div>
-      <div class="field-wrapper">
-        {{ form.date.errors }}
-        {{ form.date.label_tag }}
-        <tr>{{ form.date }}</tr>
-      </div>
-      <div class="field-wrapper">
-        {{ form.site.errors }}
-        {{ form.site.label_tag }}
-        <tr>{{ form.site }}</tr>
-      </div>
-    </table>
+
+    <div class="sub-header">
+      <h3>Purpose</h3>
+      <img src="{% static 'images/008-helmet.svg' %}" alt="helmet" />
+    </div>
+    <div class="field-wrapper">
+      {{ form.purpose.errors }}
+      {{ form.purpose.label_tag }}
+      {{ form.purpose }}
+    </div>
+
+    <div class="sub-header">
+      <h3>Depth</h3>
+      <img src="{% static 'images/008-helmet.svg' %}" alt="helmet" />
+    </div>
+    <div class="field-wrapper">
+      {{ form.depth_avg.errors }}
+      {{ form.depth_avg.label_tag }}
+      {{ form.depth_avg }}
+    </div>
+    <div class="field-wrapper"> 
+      {{ form.depth_max.errors }}
+      {{ form.depth_max.label_tag }}
+      {{ form.depth_max }}
+    </div>
+
+    <div class="sub-header">
+      <h3>Air</h3>
+      <img src="{% static 'images/002-oxygen-tank.svg' %}" alt="oxygen tank" />
+    </div>
+    <div class="field-wrapper">
+      {{ form.air_start.errors }}
+      {{ form.air_start.label_tag }}
+      {{ form.air_start }}
+    </div>
+    <div class="field-wrapper">
+      {{ form.air_end.errors }}
+      {{ form.air_end.label_tag }}
+      {{ form.air_end }}
+    </div>
+    <div class="field-wrapper">
+      {{ form.air_choice.errors }}
+      {{ form.air_choice.label_tag }}
+      {{ form.air_choice }}
+    </div>
+
+    <div class="sub-header">
+      <h3>Bottom Time</h3>
+      <img src="{% static 'images/008-helmet.svg' %}" alt="helmet" />
+    </div>
+    <div class="field-wrapper">
+        {{ form.bottom_time.errors }}
+        {{ form.bottom_time.label_tag }}
+        {{ form.bottom_time }}
+    </div>
+    <div class="field-wrapper">
+        {{ form.acc_bottom_time.errors }}
+        {{ form.acc_bottom_time.label_tag }}
+        {{ form.acc_bottom_time }}
+    </div>
+
+    <div class="sub-header">
+      <h3>Safety Stops</h3>
+      <img src="{% static 'images/008-helmet.svg' %}" alt="helmet" />
+    </div>
+    <div class="field-wrapper">
+        {{ form.safety_stop_depth.errors }}
+        {{ form.safety_stop_depth.label_tag }}
+        {{ form.safety_stop_depth }}
+    </div>
+    <div class="field-wrapper">
+        {{ form.safety_stop_time.errors }}
+        {{ form.safety_stop_time.label_tag }}
+        {{ form.safety_stop_time }}
+    </div>
   </div>
 
 
-  <div class="questions question-main">
+  <div class="questions question-conditions">
     <div class="sub-header">
-      <h2>Main</h2>
+      <h2>Conditions</h2>
       <img src="{% static 'images/024-diving.svg' %}" alt="a diving log" />
     </div>
-    <table>
+
+    <div class="sub-header">
+      <h3>Weather</h3>
+      <img src="{% static 'images/008-helmet.svg' %}" alt="helmet" />
+    </div>
       <div class="field-wrapper">
-        {{ form.number.errors }}
-        {{ form.number.label_tag }}
-        <tr>{{ form.number }}</tr>
-      </div>
+        {{ form.weather.errors }}
+        {{ form.weather.label_tag }}
+        {{ form.weather }}
+    </div>
+
+    <div class="sub-header">
+      <h3>Visibility</h3>
+      <img src="{% static 'images/020-diving.svg' %}" alt="a diving log" />
+    </div>
       <div class="field-wrapper">
-        {{ form.date.errors }}
-        {{ form.date.label_tag }}
-        <tr>{{ form.date }}</tr>
+        {{ form.visibility.errors }}
+        {{ form.visibility.label_tag }}
+        {{ form.visibility }}
       </div>
-      <div class="field-wrapper">
-        {{ form.site.errors }}
-        {{ form.site.label_tag }}
-        <tr>{{ form.site }}</tr>
-      </div>
-    </table>
+
+    <div class="sub-header">
+      <h3>Temperature</h3>
+      <img src="{% static 'images/laundry.svg' %}" alt="thermometer in water" />
+    </div>
+    <div class="field-wrapper">
+      {{ form.temperature_air.errors }}
+      {{ form.temperature_air.label_tag }}
+      {{ form.temperature_air }}
+    </div>
+    <div class="field-wrapper">
+      {{ form.temperature_surface.errors }}
+      {{ form.temperature_surface.label_tag }}
+      {{ form.temperature_surface }}
+    </div>
+    <div class="field-wrapper">
+      {{ form.temperature_bottom.errors }}
+      {{ form.temperature_bottom.label_tag }}
+      {{ form.temperature_bottom }}
+    </div>
   </div>
 
-
-
-  <div class="questions question-main">
+  <div class="questions question-equipment">
     <div class="sub-header">
-      <h2>Main</h2>
+      <h2>Equipment</h2>
       <img src="{% static 'images/024-diving.svg' %}" alt="a diving log" />
     </div>
-    <table>
-      <div class="field-wrapper">
-        {{ form.number.errors }}
-        {{ form.number.label_tag }}
-        <tr>{{ form.number }}</tr>
-      </div>
-      <div class="field-wrapper">
-        {{ form.date.errors }}
-        {{ form.date.label_tag }}
-        <tr>{{ form.date }}</tr>
-      </div>
-      <div class="field-wrapper">
-        {{ form.site.errors }}
-        {{ form.site.label_tag }}
-        <tr>{{ form.site }}</tr>
-      </div>
-    </table>
+
+    <div class="sub-header">
+      <h3>Weight</h3>
+      <img src="{% static 'images/013-weights.svg' %}" alt="dive weights" />
+    </div>
+    <div class="field-wrapper">
+      {{ form.weight.errors }}
+      {{ form.weight.label_tag }}
+      {{ form.weight }}
+    </div>
+    <div class="field-wrapper"> 
+      {{ form.weight_rating.errors }}
+      {{ form.weight_rating.label_tag }}
+      {{ form.weight_rating }}
+    </div>
+
+    <div class="sub-header">
+      <h3>Exposure Protection</h3>
+      <img src="{% static 'images/013-weights.svg' %}" alt="dive weights" />
+    </div>
+    <div class="field-wrapper">
+      {{ form.suit_desc.errors }}
+      {{ form.suit_desc.label_tag }}
+      {{ form.suit_desc }}
+    </div>
+    <div class="field-wrapper"> 
+      {{ form.suit_thickness.errors }}
+      {{ form.suit_thickness.label_tag }}
+      {{ form.suit_thickness }}
+    </div>
+    <div class="field-wrapper"> 
+      {{ form.suit_notes.errors }}
+      {{ form.suit_notes.label_tag }}
+      {{ form.suit_notes }}
+    </div>
   </div>
+
 
 
   <button type="submit" class="btn submit">Submit!</button>
