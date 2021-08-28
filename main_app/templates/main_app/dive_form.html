@@ -56,35 +56,10 @@
     </div>
   </div>
 
-  <div class="questions question-info">
+  <div class="questions question-details">
     <div class="sub-header">
-      <h2>Info</h2>
+      <h2>Details</h2>
       <img src="{% static 'images/024-diving.svg' %}" alt="a diving log" />
-    </div>
-
-    <div class="sub-header">
-      <h3>Purpose</h3>
-      <img src="{% static 'images/008-helmet.svg' %}" alt="helmet" />
-    </div>
-    <div class="field-wrapper">
-      {{ form.purpose.errors }}
-      {{ form.purpose.label_tag }}
-      {{ form.purpose }}
-    </div>
-
-    <div class="sub-header">
-      <h3>Depth</h3>
-      <img src="{% static 'images/008-helmet.svg' %}" alt="helmet" />
-    </div>
-    <div class="field-wrapper">
-      {{ form.depth_avg.errors }}
-      {{ form.depth_avg.label_tag }}
-      {{ form.depth_avg }}
-    </div>
-    <div class="field-wrapper"> 
-      {{ form.depth_max.errors }}
-      {{ form.depth_max.label_tag }}
-      {{ form.depth_max }}
     </div>
 
     <div class="sub-header">
@@ -105,6 +80,21 @@
       {{ form.air_choice.errors }}
       {{ form.air_choice.label_tag }}
       {{ form.air_choice }}
+    </div>
+
+    <div class="sub-header">
+      <h3>Depth</h3>
+      <img src="{% static 'images/008-helmet.svg' %}" alt="helmet" />
+    </div>
+    <div class="field-wrapper">
+      {{ form.depth_avg.errors }}
+      {{ form.depth_avg.label_tag }}
+      {{ form.depth_avg }}
+    </div>
+    <div class="field-wrapper"> 
+      {{ form.depth_max.errors }}
+      {{ form.depth_max.label_tag }}
+      {{ form.depth_max }}
     </div>
 
     <div class="sub-header">
@@ -146,16 +136,6 @@
     </div>
 
     <div class="sub-header">
-      <h3>Weather</h3>
-      <img src="{% static 'images/008-helmet.svg' %}" alt="helmet" />
-    </div>
-      <div class="field-wrapper">
-        {{ form.weather.errors }}
-        {{ form.weather.label_tag }}
-        {{ form.weather }}
-    </div>
-
-    <div class="sub-header">
       <h3>Visibility</h3>
       <img src="{% static 'images/020-diving.svg' %}" alt="a diving log" />
     </div>
@@ -164,6 +144,16 @@
         {{ form.visibility.label_tag }}
         {{ form.visibility }}
       </div>
+
+    <div class="sub-header">
+      <h3>Weather</h3>
+      <img src="{% static 'images/008-helmet.svg' %}" alt="helmet" />
+    </div>
+      <div class="field-wrapper">
+        {{ form.weather.errors }}
+        {{ form.weather.label_tag }}
+        {{ form.weather }}
+    </div>
 
     <div class="sub-header">
       <h3>Temperature</h3>
@@ -193,21 +183,6 @@
     </div>
 
     <div class="sub-header">
-      <h3>Weight</h3>
-      <img src="{% static 'images/013-weights.svg' %}" alt="dive weights" />
-    </div>
-    <div class="field-wrapper">
-      {{ form.weight.errors }}
-      {{ form.weight.label_tag }}
-      {{ form.weight }}
-    </div>
-    <div class="field-wrapper"> 
-      {{ form.weight_rating.errors }}
-      {{ form.weight_rating.label_tag }}
-      {{ form.weight_rating }}
-    </div>
-
-    <div class="sub-header">
       <h3>Exposure Protection</h3>
       <img src="{% static 'images/013-weights.svg' %}" alt="dive weights" />
     </div>
@@ -225,6 +200,21 @@
       {{ form.suit_notes.errors }}
       {{ form.suit_notes.label_tag }}
       {{ form.suit_notes }}
+    </div>
+
+    <div class="sub-header">
+      <h3>Weight</h3>
+      <img src="{% static 'images/013-weights.svg' %}" alt="dive weights" />
+    </div>
+    <div class="field-wrapper">
+      {{ form.weight.errors }}
+      {{ form.weight.label_tag }}
+      {{ form.weight }}
+    </div>
+    <div class="field-wrapper"> 
+      {{ form.weight_rating.errors }}
+      {{ form.weight_rating.label_tag }}
+      {{ form.weight_rating }}
     </div>
   </div>
 
