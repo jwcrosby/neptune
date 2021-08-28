@@ -29,7 +29,7 @@ body {
   --nav-bg: rgba(104, 197, 248, .7);
   --nav-bg-ff: rgba(37, 41, 47, .9);
   --borders: rgb(33, 37, 43) solid 2px;
-  --text-color: rgb(17, 20, 17);
+  --text-color: #ffffff;
   --link-hover-color: rgb(16, 56, 158);
   --button-bg: rgb(245, 245, 245);
   --button-bg-hover: rgb(226, 226, 226);
@@ -54,7 +54,7 @@ header {
 }
 
 .nav-bar-extended {
-  background: #25292D;
+  background: #0E1B33;
 }
 
 .navbar-brand {
@@ -80,6 +80,7 @@ main {
 }
 
 .page-header {
+  color: var(--text-color);
   display: flex;
   align-items: center;
   margin: 20px;
