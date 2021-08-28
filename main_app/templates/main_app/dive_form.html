@@ -14,23 +14,99 @@
   {% else %}
   <h1>Add a Dive</h1>
   {% endif %}
-  <img src="{% static 'images/024-diving.svg' %}" alt="a diving log" />
+  <img src="{% static 'images/016-diver.svg' %}" alt="a diving log" />
 </div>
 
 <form action="" method="post" class="form-container">
   {% csrf_token %}
 
   <div class="questions question-main">
+    <table>
+      <div class="field-wrapper">
+        {{ form.number.errors }}
+        <div class="sub-header">
+          <h3>{{ form.number.label_tag }}</h3>
+        </div>
+        <tr>{{ form.number }}</tr>
+      </div>
+      <div class="field-wrapper">
+        {{ form.date.errors }}
+        <div class="sub-header">
+          <h3>{{ form.date.label_tag }}</h3>
+          <img src="{% static 'images/020-diving.svg' %}" alt="a diving log" />
+        </div>
+        <tr>{{ form.date }}</tr>
+      </div>
+      <div class="field-wrapper">
+        {{ form.site.errors }}
+        <div class="sub-header">
+          <h3>{{ form.site.label_tag }}</h3>
+          <img src="{% static 'images/018-diving.svg' %}" alt="a diving log" />
+        </div>
+        <tr>{{ form.site }}</tr>
+      </div>
+    </table>
+  </div>
+
+
+
+  <div class="questions question-main">
     <div class="sub-header">
       <h2>Main</h2>
       <img src="{% static 'images/024-diving.svg' %}" alt="a diving log" />
     </div>
-  </div>
     <table>
-    <div class="main-field-header">
-      <h3>Main</h3>
+      <div class="field-wrapper">
+        {{ form.number.errors }}
+        {{ form.number.label_tag }}
+        <tr>{{ form.number }}</tr>
+      </div>
+      <div class="field-wrapper">
+        {{ form.date.errors }}
+        {{ form.date.label_tag }}
+        <tr>{{ form.date }}</tr>
+      </div>
+      <div class="field-wrapper">
+        {{ form.site.errors }}
+        {{ form.site.label_tag }}
+        <tr>{{ form.site }}</tr>
+      </div>
+    </table>
+  </div>
+
+
+  <div class="questions question-main">
+    <div class="sub-header">
+      <h2>Main</h2>
       <img src="{% static 'images/024-diving.svg' %}" alt="a diving log" />
     </div>
+    <table>
+      <div class="field-wrapper">
+        {{ form.number.errors }}
+        {{ form.number.label_tag }}
+        <tr>{{ form.number }}</tr>
+      </div>
+      <div class="field-wrapper">
+        {{ form.date.errors }}
+        {{ form.date.label_tag }}
+        <tr>{{ form.date }}</tr>
+      </div>
+      <div class="field-wrapper">
+        {{ form.site.errors }}
+        {{ form.site.label_tag }}
+        <tr>{{ form.site }}</tr>
+      </div>
+    </table>
+  </div>
+
+
+
+  <div class="questions question-main">
+    <div class="sub-header">
+      <h2>Main</h2>
+      <img src="{% static 'images/024-diving.svg' %}" alt="a diving log" />
+    </div>
+    <table>
       <div class="field-wrapper">
         {{ form.number.errors }}
         {{ form.number.label_tag }}

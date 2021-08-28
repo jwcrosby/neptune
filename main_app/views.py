@@ -42,7 +42,7 @@ def dives_detail(request, dive_id):
 
 class DiveCreate(LoginRequiredMixin, CreateView):
     model = Dive
-    fields = ['number', 'date', 'trip', 'site', 'max_depth']
+    fields = ['number', 'date', 'trip', 'site', 'depth_avg']
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -51,7 +51,7 @@ class DiveCreate(LoginRequiredMixin, CreateView):
 
 class DiveUpdate(LoginRequiredMixin, UpdateView):
     model = Dive
-    fields = ['site', 'max_depth']
+    fields = ['site', 'depth_max']
 
 
 class DiveDelete(LoginRequiredMixin, DeleteView):
