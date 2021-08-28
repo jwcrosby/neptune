@@ -1,65 +1,69 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}" />
+{% endblock %} {% block content %}
 
 <div class="page-header">
   <h1>About</h1>
   <img src="{% static 'images/logo.svg' %}" alt="logo" />
 </div>
 <hr />
-<p>In Xanadu did Kubla Khan<br>
-A stately pleasure-dome decree:<br>
-Where Alph, the sacred river, ran<br>
-Through caverns measureless to man<br>
-   Down to a sunless sea.<br>
-So twice five miles of fertile ground
-With walls and towers were girdled round;
-And there were gardens bright with sinuous rills,
-Where blossomed many an incense-bearing tree;
-And here were forests ancient as the hills,
-Enfolding sunny spots of greenery.
-
-But oh! that deep romantic chasm which slanted
-Down the green hill athwart a cedarn cover!
-A savage place! as holy and enchanted
-As e’er beneath a waning moon was haunted
-By woman wailing for her demon-lover!
-And from this chasm, with ceaseless turmoil seething,
-As if this earth in fast thick pants were breathing,
-A mighty fountain momently was forced:
-Amid whose swift half-intermitted burst
-Huge fragments vaulted like rebounding hail,
-Or chaffy grain beneath the thresher’s flail:
-And mid these dancing rocks at once and ever
-It flung up momently the sacred river.
-Five miles meandering with a mazy motion
-Through wood and dale the sacred river ran,
-Then reached the caverns measureless to man,
-And sank in tumult to a lifeless ocean;
-And ’mid this tumult Kubla heard from far
-Ancestral voices prophesying war!
-   The shadow of the dome of pleasure
-   Floated midway on the waves;
-   Where was heard the mingled measure
-   From the fountain and the caves.
-It was a miracle of rare device,
-A sunny pleasure-dome with caves of ice!
-
-   A damsel with a dulcimer
-   In a vision once I saw:
-   It was an Abyssinian maid
-   And on her dulcimer she played,
-   Singing of Mount Abora.
-   Could I revive within me
-   Her symphony and song,
-   To such a deep delight ’twould win me,
-That with music loud and long,
-I would build that dome in air,
-That sunny dome! those caves of ice!
-And all who heard should see them there,
-And all should cry, Beware! Beware!
-His flashing eyes, his floating hair!
-Weave a circle round him thrice,
-And close your eyes with holy dread
-For he on honey-dew hath fed,
-And drunk the milk of Paradise.</p>
+<div class='about-fill'>
+  <p>In Xanadu did Kubla Khan<br>
+  A stately pleasure-dome decree:<br>
+  Where Alph, the sacred river, ran<br>
+  Through caverns measureless to man<br>
+    <p style="text-indent: 15px;">Down to a sunless sea.<p>
+  So twice five miles of fertile ground<br>
+  With walls and towers were girdled round;<br>
+  And there were gardens bright with sinuous rills,<br>
+  Where blossomed many an incense-bearing tree;<br>
+  And here were forests ancient as the hills,<br>
+  Enfolding sunny spots of greenery.<br>
+  <br>
+  But oh! that deep romantic chasm which slanted<br>
+  Down the green hill athwart a cedarn cover!<br>
+  A savage place! as holy and enchanted<br>
+  As e’er beneath a waning moon was haunted<br>
+  By woman wailing for her demon-lover!<br>
+  And from this chasm, with ceaseless turmoil seething,<br>
+  As if this earth in fast thick pants were breathing,<br>
+  A mighty fountain momently was forced:<br>
+  Amid whose swift half-intermitted burst<br>
+  Huge fragments vaulted like rebounding hail,<br>
+  Or chaffy grain beneath the thresher’s flail:<br>
+  And mid these dancing rocks at once and ever<br>
+  It flung up momently the sacred river.<br>
+  Five miles meandering with a mazy motion<br>
+  Through wood and dale the sacred river ran,<br>
+  Then reached the caverns measureless to man,<br>
+  And sank in tumult to a lifeless ocean;<br>
+  And ’mid this tumult Kubla heard from far<br>
+  Ancestral voices prophesying war!<br>
+    <p style="text-indent: 15px;">The shadow of the dome of pleasure<p>
+    <p style="text-indent: 15px;">Floated midway on the waves;<p>
+    <p style="text-indent: 15px;">Where was heard the mingled measure<p>
+    <p style="text-indent: 15px;">From the fountain and the caves.<p>
+  It was a miracle of rare device,<br>
+  A sunny pleasure-dome with caves of ice!<br>
+  <br>
+    <p style="text-indent: 15px;">A damsel with a dulcimer<p>
+    <p style="text-indent: 15px;">In a vision once I saw:<p>
+    <p style="text-indent: 15px;">It was an Abyssinian maid<p>
+    <p style="text-indent: 15px;">And on her dulcimer she played,<p>
+    <p style="text-indent: 15px;">Singing of Mount Abora.<p>
+    <p style="text-indent: 15px;">Could I revive within me<p>
+    <p style="text-indent: 15px;">Her symphony and song,<p>
+    <p style="text-indent: 15px;">To such a deep delight ’twould win me,<p>
+  That with music loud and long,<br>
+  I would build that dome in air,<br>
+  That sunny dome! those caves of ice!<br>
+  And all who heard should see them there,<br>
+  And all should cry, Beware! Beware!<br>
+  His flashing eyes, his floating hair!<br>
+  Weave a circle round him thrice,<br>
+  And close your eyes with holy dread<br>
+  For he on honey-dew hath fed,<br>
+  And drunk the milk of Paradise.</p>
+<div>
 
 {% endblock %}
