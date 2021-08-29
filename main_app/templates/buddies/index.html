@@ -28,7 +28,15 @@
   <div class="card">
     <a href="{% url 'buddies_detail' buddy.id %}">
       <div class="card-content">
-        <img src="{% static 'images/014-diver.svg' %}" alt="logo" />
+        {% if buddy.icon %}
+          {% if buddy.icon == "A" %}
+          <img src="{% static 'images/014-diver.svg' %}" alt="logo" />
+          {% elif buddy.icon == "B" %}
+          <img src="{% static 'images/015-diver.svg' %}" alt="logo" />
+          {% else %}
+          <img src="{% static 'images/016-diver.svg' %}" alt="logo" />
+          {% endif %}
+        {% endif %}
         <h2>{{ buddy.name }}</h2>
       </div>
     </a>
@@ -37,10 +45,3 @@
 </section>
 
 {% endblock %}
-
-{% comment %} 
-{% if buddy.icon %}
-
-{% else %}
-
-{% endif %} {% endcomment %}
