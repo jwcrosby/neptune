@@ -44,7 +44,7 @@ class Buddy(models.Model):
         'Icon',
         max_length=1,
         choices=BUDDYICONS,
-        default=BUDDYICONS[0][0],
+        # default=BUDDYICONS[0][0],
         blank=True,
         null=True
     )
