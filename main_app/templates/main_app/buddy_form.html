@@ -2,24 +2,60 @@
 {% load static %}
 
 {% block head %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/buddy-form.css' %}" />
 {% endblock %}
 
 {% block content %}
 <div class="page-header">
   {% if object %}
-    <h1>Edit {{object.name}}</h1>
+  <h1>Edit Dive</h1>
   {% else %}
-    <h1>Add a Dive Buddy</h1>
+  <h1>Add a Buddy</h1>
   {% endif %}
-  <img src="{% static 'images/divebuddies.png' %}" alt="dive buddies"/>
 </div>
-<form action="" method="post" class="form-container" autocomplete="off">
-  {% csrf_token %}
-  <table>
-    {{ form.as_table }}
-  </table>
-  <button type="submit" class="btn submit">Submit!</button>
-</form>
+
+<div class='form-container'>
+  <form action="" method="post" class="form" autocomplete="off">
+    {% csrf_token %}
+    <div class="questions question-main">
+      <div class="field-wrapper">
+        {{ form.name.errors }}
+        <div class="sub-header-main">
+          <h3><label for="id_name">Name</label></h3>
+          <img src="{% static 'images/033-mask.svg' %}" alt="a sign with diving goggles" />
+        </div>
+        {{ form.name }}
+      </div>
+      <div class="field-wrapper">
+        {{ form.icon.errors }}
+        <div class="sub-header-main">
+          <h3><label for="id_icon">Icon</label></h3>
+          <img src="{% static 'images/029-diving.svg' %}" alt="diving mask" />
+        </div>
+        {{ form.icon }}
+      </div>
+      <div class="field-wrapper">
+        <div class="sub-header-info">
+          <h4>Icons Available:</h4>
+          <div class='icon-container'>
+            <div class='icon-container-sub'>
+              <h5>A:</h5>
+              <img src="{% static 'images/014-diver.svg' %}" alt="brunette diver" />
+            </div>
+            <div class='icon-container-sub'>
+              <h5>B:</h5>
+              <img src="{% static 'images/015-diver.svg' %}" alt="blonde diver" />
+            </div>
+            <div class='icon-container-sub'>
+              <h5>C:</h5>
+              <img src="{% static 'images/016-diver.svg' %}" alt="mysterious diver" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn submit">Submit!</button>
+  </form>
+</div>
 
 {% endblock %}

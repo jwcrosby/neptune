@@ -1,0 +1,247 @@
+.sub-header, .sub-header-main, .sub-header-info {
+  display: flex;
+  align-items: center;
+}
+
+.sub-header img {
+  height: 30px;
+  margin-left: 10px;
+}
+
+.sub-header img:first-of-type {
+  margin-left: 8px;
+}
+
+.sub-header-main img {
+  height: 30px;
+  margin-left: 10px;
+}
+
+.sub-header-main img:first-of-type {
+  margin-left: 12px;
+}
+
+.sub-header-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0 0;
+}
+
+.icon-container {
+  display: flex;
+}
+.icon-container-sub {
+  margin: 0 6px;
+}
+
+.icon-container img {
+  height: 60px;
+  margin: 2px;
+}
+
+.main-field-header {
+  display: flex;
+  align-items: center;
+}
+
+.main-field-header img {
+  height: 30px;
+  margin-left: 5px;
+}
+
+.main-field-header img:first-of-type {
+  margin-left: 12px;
+}
+
+.form-container {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-self: center;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.questions {
+  margin: 3px 6px 3px;
+  padding: 15px 15px 20px ;
+  border: 2px solid rgba(255, 255, 255, 0.212);
+  border-radius: 12px;
+}
+
+.sub-header-main > h3  {
+  font-size: clamp(2.8rem, 2.7vw, 3.2rem);
+  margin: 10px 0 10px 0;
+  font-weight: 700;
+}
+
+.sub-header > h3  {
+  font-size: clamp(2.3rem, 2.2vw, 3rem);
+  margin: 10px 0 10px 0;
+  font-weight: 600;
+}
+
+.field-wrapper > h3  {
+  font-size: clamp(1.9rem, 1.4vw, 2.4rem);
+  margin: 10px 0 10px 0;
+  font-weight: 400;
+}
+
+.sub-header-info > h4 {
+  font-size: clamp(2.3rem, 2.2vw, 3rem);
+  font-weight: 400;
+  margin: 3px 0 5px;
+}
+
+.icon-container-sub > h5  {
+  font-size: clamp(1.7rem, 1.2vw, 2.2rem);
+  font-weight: 400;
+  margin: 2px 0 0;
+}
+
+input,
+select {
+  width: 100%;
+  color: white;
+  background-color: #0a1629;
+  font-size: 1.8rem;
+  padding: 2px;
+  line-height: 28px;
+  border-radius: 2px;
+  font-weight: 400;
+}
+
+select{
+  height: 35px;
+}
+
+.btn {
+  align-self: flex-end;
+  margin: 15px 40px 20px 0;
+}
+
+
+@media only screen and (min-width: 768px) {
+  .questions {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .question-main,
+  .question-details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .question-conditions-equipment-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .question-conditions,
+  .question-equipment {
+    /* border: 4px dotted green; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .question-main > .field-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .question-details-filler,
+  .question-conditions-filler,
+  .question-equipment-filler {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .question-details-ss-bt-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .question-details-sub {
+    /* border: 4px dotted pink; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .question-details-sub-inner {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .question-details-sub-inner > .field-wrapper {
+    /* border: 4px dotted pink; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+
+@media only screen and (min-width: 768px) {
+  main {
+    max-width: 1300px;
+    min-height: calc(100vh - 53px);
+  }
+
+  .sub-header, .sub-header-main  h2 {
+    font-size: var(--font-xxl);
+  }
+
+  .sub-header img {
+    height: 35px;
+    margin-left: 15px;
+  }
+
+  .sub-header img:first-of-type {
+    margin-left: 8px;
+  }
+
+  .sub-header-main img {
+    height: 35px;
+    margin-left: 15px;
+  }
+
+  .sub-header-main img:first-of-type {
+    margin-left: 12px;
+  }
+
+  .main-field-header h3 {
+    font-size: var(--font-xl);
+  }
+
+  .main-field-header h4 {
+    font-size: var(--font-l);
+  }
+
+  .main-field-header img {
+    height: 40px;
+    margin-left: 8px;
+  }
+
+  .main-field-header img:first-of-type {
+    margin-left: 10px;
+  }
+}
