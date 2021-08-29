@@ -13,12 +13,15 @@
 {% block content %}
 
 <section class="page-header">
-  <h1>My Dives</h1>
-  <img src="{% static 'images/logo.svg' %}" alt="logo" />
-</section>
-
-<section class="add-a-new">
-  <a class="add-a-new-link btn submit" href="{% url 'dives_create' %}">+ Dive</a>
+  <div class="page-header-sub-title">
+    <h1>My Dives</h1>
+    <img src="{% static 'images/logo.svg' %}" alt="logo" />
+  </div>
+  <div class="page-header-sub-button">
+    <section class="add-a-new">
+    <a class="add-a-new-link btn submit" href="{% url 'dives_create' %}">+ Dive</a>
+    </section>
+  </div>
 </section>
 
 <section class="card-container">

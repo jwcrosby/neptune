@@ -1,11 +1,15 @@
-.add-a-new {
-  display: flex;
-  flex-direction: row-reverse;
-  margin: 0 35px 5px;
+.page-header {
+  margin-bottom: 10px;
+  justify-content: space-between;
 }
 
-.add-a-new-link {
-  /* font-size: 20px; */
+.page-header-sub-title {
+  display: flex;
+}
+
+.add-a-new {
+  display: flex;
+  /* width: 100%; */
 }
 
 .card-container {
@@ -16,9 +20,9 @@
 }
 
 .card {
-  width: 150px;
+  width: 100%;
   height: 150px;
-  margin: 10px;
+  margin: 15px;
   border: solid 2px rgba(228, 189, 62, 0.603);
   box-shadow: 4px 4px 6px -1px rgb(73, 94, 163);
   position: relative;
@@ -59,12 +63,12 @@
 
 .card h2 {
   margin: 7px 0;
-  font-size: var(--font-xl);
+  font-size: var(--font-xtreme);
 }
 
 .card p {
   margin: 0;
-  font-size: var(--font-reg);
+  font-size: var(--font-l);
 }
 
 .page-header > img {
@@ -73,4 +77,22 @@
 
 .page-header > img:first-of-type {
   margin-left: 15px;
+}
+
+@media only screen and (min-width: 576px) {
+
+  .card {
+    width: 150px;
+    height: 150px;
+  }
+
+  .card h2 {
+    margin: 7px 0;
+    font-size: var(--font-xl);
+  }
+  
+  .card p {
+    margin: 0;
+    font-size: var(--font-reg);
+  }
 }

@@ -33,7 +33,7 @@ body {
   --text-color: #ffffff;
   --link-hover-color: rgb(16, 56, 158);
   --button-bg-hover: #0e1b33;
-  --submit: rgb(131, 163, 87);
+  --submit: rgba(187, 148, 48, 0.863);
   --warn: rgb(255, 102, 0);
   --danger: rgb(220, 20, 30);
   --secondary: rgb(57, 57, 57);
@@ -88,7 +88,7 @@ main {
 }
 
 .btn {
-  font-size: var(--font-l);
+  font-size: 1.5rem;
   padding: 4px 9px;
   border-radius: 6px;
   border-width: 2px;
@@ -97,7 +97,6 @@ main {
   font-weight: 600;
   cursor: pointer;
   font-family: inherit;
-  margin-right: 10px;
 }
 
 .btn:hover {
@@ -137,11 +136,11 @@ main {
 
 .page-header img {
   height: 40px;
-  margin-left: 15px;
+  margin-left: 10px;
 }
 
 .page-header img:first-of-type {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -160,7 +159,7 @@ main {
   }
 
   .page-header img:first-of-type {
-    margin-left: 25px;
+    margin-left: 12px;
   }
 
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
