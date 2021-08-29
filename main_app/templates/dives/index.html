@@ -26,10 +26,13 @@
 <section class="card-container">
   {% for dive in dives %}
   <div class="card">
+    <div class="card-bg">
+      <img src="{% static 'images/coral.svg' %}" alt="pink coral" />
+    </div>
     <a href="{% url 'dives_detail' dive.id %}">
       <div class="card-content">
         <h2>{{ dive.number }}</h2>
-        <p>{{ dive.site }}</p>
+        <h3>{{ dive.site }}</h3>
         <p>{{ dive.date }}</p>
       </div>
     </a>
