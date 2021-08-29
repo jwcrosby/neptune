@@ -1,9 +1,3 @@
-.form-container, .questions {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
 .sub-header {
   display: flex;
   align-items: center;
@@ -11,7 +5,7 @@
 
 .sub-header img {
   height: 30px;
-  margin-left:10px;
+  margin-left: 10px;
 }
 
 .sub-header img:first-of-type {
@@ -25,40 +19,89 @@
 
 .main-field-header img {
   height: 30px;
-  margin-left:px;
+  margin-left: px;
 }
 
 .main-field-header img:first-of-type {
   margin-left: 15px;
 }
 
-table {
-  padding: 0 40px;
+.form-container {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  border-spacing: 0 20px;
 }
 
-th {
-  text-align: left;
-  padding: 6px 20px 0 0;
-  font-weight: normal;
-  vertical-align: top;
-  font-size: var(--font-reg);
+.questions {
+  display: flex;
+  flex-direction: column;
 }
 
-td {
-  max-width: 60%;
-}
-
-td > * {
+.question-main,
+.question-details {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
-  padding: 2px 4px;
-  font-size: var(--font-l);
 }
 
-td > textarea {
-  height: calc(4 * var(--font-l) + 8px);
-  font-family: inherit;
+.question-conditions-equipment-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.question-conditions,
+.question-equipment {
+  /* border: 4px dotted green; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.question-main > .field-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.question-details-filler,
+.question-conditions-filler,
+.question-equipment-filler {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.question-details-ss-bt-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.question-details-sub {
+  /* border: 4px dotted pink; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.question-details-sub-inner {
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.question-details-sub-inner > .field-wrapper {
+  /* border: 4px dotted pink; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+input {
+  width: 100%;
 }
 
 .btn {
@@ -67,22 +110,20 @@ td > textarea {
 }
 
 @media only screen and (min-width: 768px) {
-
   main {
     max-width: 1300px;
     min-height: calc(100vh - 53px);
   }
 
-
   .sub-header h2 {
     font-size: var(--font-xxl);
   }
-  
+
   .sub-header img {
     height: 35px;
-    margin-left:15px;
+    margin-left: 15px;
   }
-  
+
   .sub-header img:first-of-type {
     margin-left: 20px;
   }
@@ -90,12 +131,12 @@ td > textarea {
   .main-field-header h3 {
     font-size: var(--font-xl);
   }
-  
+
   .main-field-header img {
     height: 40px;
     margin-left: 8px;
   }
-  
+
   .main-field-header img:first-of-type {
     margin-left: 10px;
   }
