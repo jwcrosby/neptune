@@ -32,75 +32,8 @@
   width: 100%;
 }
 
-.questions {
-  display: flex;
-  flex-direction: column;
-}
-
-.question-main,
-.question-details {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.question-conditions-equipment-container {
-  display: flex;
-  flex-direction: row;
-}
-
-.question-conditions,
-.question-equipment {
-  /* border: 4px dotted green; */
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-.question-main > .field-wrapper {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-}
-
-.question-details-filler,
-.question-conditions-filler,
-.question-equipment-filler {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.question-details-ss-bt-container {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-
-.question-details-sub {
-  /* border: 4px dotted pink; */
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.question-details-sub-inner {
-  display: flex;
-  flex-direction: row;
-  
-}
-
-.question-details-sub-inner > .field-wrapper {
-  /* border: 4px dotted pink; */
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-
-input {
+input,
+select {
   width: 100%;
 }
 
@@ -108,6 +41,80 @@ input {
   align-self: flex-end;
   margin-right: 40px;
 }
+
+
+@media only screen and (min-width: 768px) {
+  .questions {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .question-main,
+  .question-details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .question-conditions-equipment-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .question-conditions,
+  .question-equipment {
+    /* border: 4px dotted green; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .question-main > .field-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .question-details-filler,
+  .question-conditions-filler,
+  .question-equipment-filler {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .question-details-ss-bt-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .question-details-sub {
+    /* border: 4px dotted pink; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .question-details-sub-inner {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .question-details-sub-inner > .field-wrapper {
+    /* border: 4px dotted pink; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+
+
+
+
 
 @media only screen and (min-width: 768px) {
   main {
