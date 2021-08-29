@@ -11,11 +11,10 @@
 
 {% block content %}
   
-<div class="card" style="border-color: {{ buddy.color }}">
-  <div class="card-bg" style="background-color: {{ buddy.color }}"></div>
+<div class="card">
+  <div class="card-bg"></div>
   <div class="card-content">
     <h2>{{ buddy.name }}</h2>
-    <p>A {{ buddy.color }} buddy</p>
   </div>
 </div>
 <a href="{% url 'buddies_update' buddy.id %}" class="btn warn">Edit</a>

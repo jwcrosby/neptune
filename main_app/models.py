@@ -3,15 +3,21 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from django.utils import timezone
 
-WEIGHTRATINGS = (
-    ('E', '✔️'),
-    ('P', '➕'),
-    ('N', '➖')
+BUDDYICONS = (
+    ('A', 'A'),
+    ('B', 'B'),
+    ('C', 'C')
 )
 
 AIRCHOICES = (
     ('A', 'Air'),
     ('N', 'Nitrox')
+)
+
+WEIGHTRATINGS = (
+    ('E', '✔️'),
+    ('P', '➕'),
+    ('N', '➖')
 )
 
 class Trip(models.Model):
@@ -34,7 +40,14 @@ class Trip(models.Model):
 
 class Buddy(models.Model):
     name = models.CharField(max_length=50, blank=True)
-    color = models.CharField(max_length=20, blank=True)
+    icon = models.CharField(
+        'Icon',
+        max_length=1,
+        choices=AIRCHOICES,
+        default=AIRCHOICES[0][0],
+        blank=True,
+        null=True
+    )
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     created_date = models.DateTimeField(default=timezone.now)
 

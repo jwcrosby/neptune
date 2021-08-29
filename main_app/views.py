@@ -73,7 +73,7 @@ def add_note(request, dive_id):
 
 class BuddyCreate(LoginRequiredMixin, CreateView):
     model = Buddy
-    fields = ['name', 'color']
+    fields = ['name', 'icon']
 
     def form_valid(self, form):
         form.instance.user = self.request.user
