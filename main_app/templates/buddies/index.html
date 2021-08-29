@@ -12,21 +12,24 @@
 {% block content %}
 
 <section class="page-header">
-  <h1>Dive Buddies</h1>
-  <img src="{% static 'images/divebuddies.png' %}" alt="dive buddies" />
-  <img src="{% static 'images/2.svg' %}" alt="2" />
-  <img src="{% static 'images/3.svg' %}" alt="3" />
-  <img src="{% static 'images/4.svg' %}" alt="4" />
+  <div class="page-header-sub-title">
+    <h1>My Buddies</h1>
+    <img src="{% static 'images/logo.svg' %}" alt="logo" />
+  </div>
+  <div class="page-header-sub-button">
+    <section class="add-a-new">
+    <a class="add-a-new-link btn submit" href="{% url 'dives_create' %}">+ Buddy</a>
+    </section>
+  </div>
 </section>
 
 <section class="card-container">
   {% for buddy in buddies %}
-  <div class="card" style="border-color: {{ buddy.color }}">
-    <div class="card-bg" style="background-color: {{ buddy.color }}"></div>
+  <div class="card">
     <a href="{% url 'buddies_detail' buddy.id %}">
       <div class="card-content">
         <h2>{{ buddy.name }}</h2>
-        <p>A {{ buddy.color }} buddy</p>
+        <p>{{ buddy.site }}</p>
       </div>
     </a>
   </div>

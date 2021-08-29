@@ -1,3 +1,17 @@
+.page-header {
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.page-header-sub-title {
+  display: flex;
+}
+
+.add-a-new {
+  display: flex;
+  /* width: 100%; */
+}
+
 .card-container {
   padding: 0 40px;
   display: flex;
@@ -6,16 +20,18 @@
 }
 
 .card {
-  width: 224px;
-  height: 224px;
-  margin: 10px;
-  border: solid 2px;
-  box-shadow: var(--card-box-shadow);
+  width: 100%;
+  height: 150px;
+  margin: 15px;
+  border: solid 2px rgba(228, 189, 62, 0.603);
+  box-shadow: 4px 4px 6px -1px rgb(73, 94, 163);
   position: relative;
+  background-color: #0a1629;
+  border-radius: 3px;
+  opacity: .92;
 }
 
 .card-bg{
-  opacity: .4;
   position: absolute;
   display: inline-flex;
   top: 0;
@@ -47,12 +63,12 @@
 
 .card h2 {
   margin: 7px 0;
-  font-size: var(--font-xl);
+  font-size: var(--font-xtreme);
 }
 
 .card p {
   margin: 0;
-  font-size: var(--font-reg);
+  font-size: var(--font-l);
 }
 
 .page-header > img {
@@ -61,4 +77,22 @@
 
 .page-header > img:first-of-type {
   margin-left: 15px;
+}
+
+@media only screen and (min-width: 576px) {
+
+  .card {
+    width: 150px;
+    height: 150px;
+  }
+
+  .card h2 {
+    margin: 7px 0;
+    font-size: var(--font-xl);
+  }
+  
+  .card p {
+    margin: 0;
+    font-size: var(--font-reg);
+  }
 }
