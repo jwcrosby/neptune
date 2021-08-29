@@ -5,7 +5,7 @@
 }
 
 .add-a-new-link {
-  font-size: 20px;
+  /* font-size: 20px; */
 }
 
 .card-container {
@@ -16,16 +16,18 @@
 }
 
 .card {
-  width: 224px;
-  height: 224px;
+  width: 150px;
+  height: 150px;
   margin: 10px;
-  border: solid 2px;
-  box-shadow: var(--card-box-shadow);
+  border: solid 2px rgba(228, 189, 62, 0.603);
+  box-shadow: 4px 4px 6px -1px rgb(73, 94, 163);
   position: relative;
+  background-color: #0a1629;
+  border-radius: 3px;
+  opacity: .92;
 }
 
 .card-bg{
-  opacity: .4;
   position: absolute;
   display: inline-flex;
   top: 0;

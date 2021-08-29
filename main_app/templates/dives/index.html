@@ -18,13 +18,12 @@
 </section>
 
 <section class="add-a-new">
-  <a class="add-a-new-link btn submit" href="{% url 'dives_create' %}">Add Dive</a>
+  <a class="add-a-new-link btn submit" href="{% url 'dives_create' %}">+ Dive</a>
 </section>
 
 <section class="card-container">
   {% for dive in dives %}
-  <div class="card" style="border-color: blue">
-    <div class="card-bg" style="background-color: blue"></div>
+  <div class="card">
     <a href="{% url 'dives_detail' dive.id %}">
       <div class="card-content">
         <h2>{{ dive.number }}</h2>
