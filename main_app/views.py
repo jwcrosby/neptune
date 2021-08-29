@@ -96,7 +96,7 @@ class BuddyDetail(LoginRequiredMixin, DetailView):
 
 class BuddyUpdate(LoginRequiredMixin, UpdateView):
     model = Buddy
-    fields = ['name', 'color']
+    fields = ['name', 'icon']
 
 
 class BuddyDelete(LoginRequiredMixin, DeleteView):

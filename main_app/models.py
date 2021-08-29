@@ -43,8 +43,8 @@ class Buddy(models.Model):
     icon = models.CharField(
         'Icon',
         max_length=1,
-        choices=AIRCHOICES,
-        default=AIRCHOICES[0][0],
+        choices=BUDDYICONS,
+        default=BUDDYICONS[0][0],
         blank=True,
         null=True
     )
