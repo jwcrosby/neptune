@@ -1,8 +1,19 @@
+.add-a-new {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0 35px 5px;
+}
+
+.add-a-new-text {
+  font-size: 20px;
+}
+
 .card-container {
   padding: 0 30px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  font-size: 30px;
 }
 
 .card-ig-container {
