@@ -1,4 +1,4 @@
-.sub-header {
+.sub-header, .sub-header-main {
   display: flex;
   align-items: center;
 }
@@ -12,6 +12,15 @@
   margin-left: 15px;
 }
 
+.sub-header-main img {
+  height: 30px;
+  margin-left: 10px;
+}
+
+.sub-header-main img:first-of-type {
+  margin-left: 15px;
+}
+
 .main-field-header {
   display: flex;
   align-items: center;
@@ -19,7 +28,7 @@
 
 .main-field-header img {
   height: 30px;
-  margin-left: px;
+  margin-left: 5px;
 }
 
 .main-field-header img:first-of-type {
@@ -28,13 +37,77 @@
 
 .form-container {
   display: flex;
+  align-self: center;
+  width: 100%;
+}
+
+.form {
+  display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+.questions {
+  margin: 3px 5px 3px;
+  padding: 15px 15px 25px ;
+  border: 3px solid rgba(255, 255, 255, 0.212);
+  border-radius: 12px;
+}
+
+.sub-header-main > h3  {
+  font-size: clamp(2.9rem, 3vw, 3.6rem);
+  margin: 10px 0 10px 0;
+  font-weight: 700;
+}
+
+.sub-header > h3  {
+  font-size: clamp(2.3rem, 2.2vw, 3rem);
+  margin: 10px 0 10px 0;
+  font-weight: 600;
+}
+
+.field-wrapper > h3  {
+  font-size: clamp(1.9rem, 1.4vw, 2.4rem);
+  margin: 10px 0 10px 0;
+  font-weight: 400;
+}
+
+
+.login h1 {
+  font-size: clamp(2.5rem, 3vw, 3.8rem);
+  margin: 10px 0 16px 0;
+  font-weight: 700;
+}
+
+.login > p {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.login label {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  color: white;
+  font-weight: 600;
+}
+
+
+.login .btn {
+  align-self: flex-end;
+  margin-right: 0;
+  margin-top: 10px;
 }
 
 input,
 select {
   width: 100%;
+  color: white;
+  background-color: #0a1629;
+  font-size: 1.3rem;
+  padding: 2px;
+  line-height: 28px;
+  border-radius: 2px;
 }
 
 .btn {
@@ -112,26 +185,31 @@ select {
 }
 
 
-
-
-
-
 @media only screen and (min-width: 768px) {
   main {
     max-width: 1300px;
     min-height: calc(100vh - 53px);
   }
 
-  .sub-header h2 {
+  .sub-header, .sub-header-main  h2 {
     font-size: var(--font-xxl);
   }
 
-  .sub-header img {
+  .sub-headerimg {
     height: 35px;
     margin-left: 15px;
   }
 
   .sub-header img:first-of-type {
+    margin-left: 20px;
+  }
+
+  .sub-header-main img {
+    height: 35px;
+    margin-left: 15px;
+  }
+
+  .sub-header-main img:first-of-type {
     margin-left: 20px;
   }
 

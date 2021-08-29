@@ -14,41 +14,41 @@
   {% else %}
   <h1>Add a Dive</h1>
   {% endif %}
-  {% comment %} <img src="{% static 'images/016-diver.svg' %}" alt="a diving log" /> {% endcomment %}
 </div>
 
-<form action="" method="post" class="form-container">
+<div class='form-container'>
+<form action="" method="post" class="form">
   {% csrf_token %}
-
   <div class="questions question-main">
     <div class="field-wrapper">
       {{ form.number.errors }}
-      <div class="sub-header">
-        <h3>{{ form.number.label_tag }}</h3>
+      <div class="sub-header-main">
+        <h3><label for="id_number">Dive No.</label></h3>
+        <img src="{% static 'images/036-diving.svg' %}" alt="a sign with diving goggles" />
       </div>
       {{ form.number }}
     </div>
     <div class="field-wrapper">
       {{ form.date.errors }}
-      <div class="sub-header">
-        <h3>{{ form.date.label_tag }}</h3>
-        <img src="{% static 'images/020-diving.svg' %}" alt="a diving log" />
+      <div class="sub-header-main">
+        <h3><label for="id_date">Date</label></h3>
+        <img src="{% static 'images/020-diving.svg' %}" alt="calendar" />
       </div>
       <tr>{{ form.date }}</tr>
     </div>
     <div class="field-wrapper">
       {{ form.site.errors }}
-      <div class="sub-header">
-        <h3>{{ form.site.label_tag }}</h3>
-        <img src="{% static 'images/018-diving.svg' %}" alt="a diving log" />
+      <div class="sub-header-main">
+        <h3><label for="id_site">Dive Site</label></h3>
+        <img src="{% static 'images/018-diving.svg' %}" alt="map pin on the ocean" />
       </div>
       <tr>{{ form.site }}</tr>
     </div>
     <div class="field-wrapper">
       {{ form.trip.errors }}
-      <div class="sub-header">
-        <h3>{{ form.trip.label_tag }}</h3>
-        <img src="{% static 'images/023-divers.svg' %}" alt="a diving log" />
+      <div class="sub-header-main">
+        <h3><label for="id_trip">Trip</label></h3>
+        <img src="{% static 'images/023-divers.svg' %}" alt="a group of divers" />
       </div>
       <tr>{{ form.trip }}</tr>
     </div>
@@ -57,8 +57,8 @@
 
   <div class="questions question-details">
     <div class="question-details-filler">
-      <div class="sub-header">
-        <h2>Details</h2>
+      <div class="sub-header-main">
+        <h3>Details</h3>
         <img src="{% static 'images/024-diving.svg' %}" alt="a diving log" />
       </div>
       <div class="question-details-sub">
@@ -69,17 +69,17 @@
         <div class="question-details-sub-inner">
           <div class="field-wrapper">
             {{ form.air_start.errors }}
-            <h3>{{ form.air_start.label_tag }}</h3>
+            <h3><label for="id_air_start">Start (psi)</label></h3>
             {{ form.air_start }}
           </div>
           <div class="field-wrapper">
             {{ form.air_end.errors }}
-            <h3>{{ form.air_end.label_tag }}</h3>
+            <h3><label for="id_air_end">End (psi)</label></h3>
             {{ form.air_end }}
           </div>
           <div class="field-wrapper">
             {{ form.air_choice.errors }}
-            <h3>{{ form.air_choice.label_tag }}</h3>
+            <h3><label for="id_air_choice">Air or Nitrox?</label></h3>
             {{ form.air_choice }}
           </div>
         </div>
@@ -143,15 +143,14 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
   <div class="question-conditions-equipment-container">
     <div class="questions question-conditions">
       <div class="question-conditions-filler">
-        <div class="sub-header">
-          <h2>Conditions</h2>
+        <div class="sub-header-main">
+          <h3>Conditions</h3>
           <img src="{% static 'images/024-diving.svg' %}" alt="a diving log" />
         </div>
 
@@ -200,8 +199,8 @@
 
     <div class="questions question-equipment">
       <div class="question-equipment-filler">
-        <div class="sub-header">
-          <h2>Equipment</h2>
+        <div class="sub-header-main">
+          <h3>Equipment</h3>
           <img src="{% static 'images/024-diving.svg' %}" alt="a diving log" />
         </div>
 
@@ -245,5 +244,6 @@
 
   <button type="submit" class="btn submit">Submit!</button>
 </form>
+<div>
 
 {% endblock %}
