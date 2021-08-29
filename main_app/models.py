@@ -14,10 +14,6 @@ AIRCHOICES = (
     ('N', 'Nitrox')
 )
 
-
-
-
-
 class Trip(models.Model):
     destination = models.CharField(max_length=100)
     country = models.CharField(max_length=100, blank=True)
@@ -69,7 +65,7 @@ class Dive(models.Model):
     depth_avg = models.IntegerField('Average Depth (ft)', blank=True, null=True)
     depth_max = models.IntegerField('Max Depth (ft)', blank=True, null=True)
     bottom_time = models.IntegerField('Bottom Time (min)', blank=True, null=True)
-    acc_bottom_time = models.IntegerField('Accumulated Bottom Time (min)', blank=True, null=True)
+    acc_bottom_time = models.IntegerField('Acc. Bottom Time (min)', blank=True, null=True)
     safety_stop_depth = models.IntegerField('Safety Stop Depth (ft)', blank=True, null=True)
     safety_stop_time = models.IntegerField('Safety Stop Time (min)', blank=True, null=True)
     temperature_air = models.IntegerField('Air Temperature (F)', blank=True, null=True)
