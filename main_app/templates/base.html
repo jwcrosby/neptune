@@ -37,10 +37,10 @@
               <a class="nav-link" href="{% url 'dives_index' %}">Dives</a>
               <a class="nav-link" href="{% url 'trips_index' %}">Trips</a>
               <a class="nav-link" href="{% url 'buddies_index' %}">Buddies</a>
-              <a class="nav-link" href="{% url 'about' %}">About</a>
+              {% comment %} <a class="nav-link" href="{% url 'about' %}">About</a> {% endcomment %}
               <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
               {% else %}
-              <a class="nav-link" href="{% url 'about' %}">About</a>
+              {% comment %} <a class="nav-link" href="{% url 'about' %}">About</a> {% endcomment %}
               <a class="nav-link" href="{% url 'home' %}">Login</a>
               <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
               {% endif %}
