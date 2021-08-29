@@ -59,6 +59,21 @@ main > section {
   font-weight: 700;
 }
 
+.cozy-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  color: white;
+}
+
+.cozy-container h1 {
+  font-size: clamp(2.5rem, 3vw, 3.8rem);
+  margin: 10px 0 16px 0;
+  font-weight: 700;
+}
+
 .login > p {
   display: flex;
   flex-direction: column;
@@ -100,7 +115,11 @@ main > section {
   }
 
   .login {
-    /* border: rgb(36, 116, 248) solid 2px; */
+    padding: 20px;
+    border-radius: 6px;
+  }
+
+  .cozy-container {
     padding: 20px;
     border-radius: 6px;
   }
