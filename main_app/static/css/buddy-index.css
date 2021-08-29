@@ -23,10 +23,10 @@
   width: 100%;
   height: 150px;
   margin: 15px;
+  background-color: rgba(187, 148, 48, 0.774);
   border: solid 2px rgba(228, 189, 62, 0.603);
   box-shadow: 4px 4px 6px -1px rgb(73, 94, 163);
   position: relative;
-  background-color: #0a1629;
   border-radius: 3px;
   opacity: .92;
 }
@@ -62,14 +62,14 @@
 }
 
 .card h2 {
-  margin: 7px 0;
-  font-size: var(--font-xtreme);
+  margin: 3px 0 7px;
+  font-size: var(--font-xxl);
 }
 
-.card p {
-  margin: 0;
-  font-size: var(--font-l);
+.card-content > img {
+  height: 55px
 }
+
 
 .page-header > img {
   margin-left: 10px;
@@ -79,7 +79,7 @@
   margin-left: 15px;
 }
 
-@media only screen and (min-width: 576px) {
+@media only screen and (min-width: 776px) {
 
   .card {
     width: 150px;
@@ -87,12 +87,7 @@
   }
 
   .card h2 {
-    margin: 7px 0;
+    margin: 5px 0;
     font-size: var(--font-xl);
-  }
-  
-  .card p {
-    margin: 0;
-    font-size: var(--font-reg);
   }
 }

@@ -14,7 +14,7 @@
 <section class="page-header">
   <div class="page-header-sub-title">
     <h1>My Buddies</h1>
-    <img src="{% static 'images/logo.svg' %}" alt="logo" />
+    <img src="{% static 'images/023-divers.svg' %}" alt="logo" />
   </div>
   <div class="page-header-sub-button">
     <section class="add-a-new">
@@ -28,8 +28,8 @@
   <div class="card">
     <a href="{% url 'buddies_detail' buddy.id %}">
       <div class="card-content">
+        <img src="{% static 'images/014-diver.svg' %}" alt="logo" />
         <h2>{{ buddy.name }}</h2>
-        <p>{{ buddy.site }}</p>
       </div>
     </a>
   </div>
@@ -37,3 +37,10 @@
 </section>
 
 {% endblock %}
+
+{% comment %} 
+{% if buddy.icon %}
+
+{% else %}
+
+{% endif %} {% endcomment %}
