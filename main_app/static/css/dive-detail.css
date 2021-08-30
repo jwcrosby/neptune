@@ -27,6 +27,16 @@
   justify-content: center;
 }
 
+
+
+
+
+
+
+
+
+
+
 .sub-header,
 .sub-header-main {
   display: flex;
@@ -88,6 +98,10 @@
   border-radius: 12px;
 }
 
+.question-main {
+  background-color: rgba(207, 143, 23, 0.275);
+}
+
 .sub-header-main > h3 {
   font-size: clamp(2.8rem, 2.7vw, 3.2rem);
   margin: 10px 0 10px 0;
@@ -106,10 +120,24 @@
   font-weight: 400;
 }
 
+.field-wrapper > h4 {
+  background-color: #0a1629;
+  width: 100%;
+  font-size: 1.8rem;
+  margin: 10px 0 10px 0;
+  font-weight: 400;
+  height: 35px;
+  line-height: 28px;
+  padding: 2px;
+  border-radius: 2px;
+  margin-left: 5px;
+  padding: 3px;
+  border: 2px inset rgb(118,118,118);
+}
 
 .btn {
   align-self: flex-end;
-  margin: 15px 40px 20px 0;
+  margin-left: 10px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -150,7 +178,6 @@
 
   .question-conditions,
   .question-equipment {
-    /* border: 4px dotted green; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -182,7 +209,6 @@
   }
 
   .question-details-sub {
-    /* border: 4px dotted pink; */
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -194,9 +220,27 @@
   }
 
   .question-details-sub-inner > .field-wrapper {
-    /* border: 4px dotted pink; */
     display: flex;
     flex-direction: column;
+    width: 100%;
+  }
+
+  .temperature-wrapper, .suit-wrapper, .weight-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+
+  .temperature-wrapper > .field-wrapper {
+    width: 100%;
+  }
+
+  .suit-wrapper > .field-wrapper {
+    width: 100%;
+  }
+
+  .weight-wrapper > .field-wrapper {
     width: 100%;
   }
 }
@@ -243,6 +287,10 @@
     margin-left: 10px;
   }
 }
+
+
+
+
 
 
 

@@ -57,6 +57,10 @@
   border: 2px solid rgba(255, 255, 255, 0.212);
   border-radius: 12px;
 }
+/* 
+.question-main {
+  background-color: rgba(207, 143, 23, 0.275);
+} */
 
 .sub-header-main > h3  {
   font-size: clamp(2.8rem, 2.7vw, 3.2rem);

@@ -32,7 +32,7 @@ body {
   --borders: rgb(33, 37, 43) solid 2px;
   --text-color: #ffffff;
   --link-hover-color: rgb(16, 56, 158);
-  --button-bg: rgba(224, 173, 43, 0.678);
+  --button-bg: rgba(182, 132, 40, 0.7);
   --button-bg-hover: #0e1b33;
   --submit: rgba(116, 199, 61, 0.623);
   --warn: rgba(255, 102, 0, 0.623);

@@ -30,7 +30,7 @@
           <h3>Date</h3>
           <img src="{% static 'images/020-diving.svg' %}" alt="calendar" />
         </div>
-        {{ dive.date }}
+        <h4>{{ dive.date }}</h4>
       </div>
 
       <div class="field-wrapper">
@@ -38,15 +38,15 @@
           <h3>Dive Site</h3>
           <img src="{% static 'images/018-diving.svg' %}" alt="map pin on the ocean" />
         </div>
-        {{ dive.site }}
+        <h4>{{ dive.site }}</h4>
       </div>
 
       <div class="field-wrapper">
         <div class="sub-header-main">
           <h3>Trip</h3>
-          <img src="{% static 'images/028-diving.svg' %}" alt="diving connections" />
+          <img src="{% static 'images/island.svg' %}" alt="diving connections" />
         </div>
-        {{ dive.trip }}
+        <h4>{{ dive.trip }}</h4>
       </div>
     </div>
 
@@ -59,45 +59,47 @@
           <img src="{% static 'images/024-diving.svg' %}" alt="a diving log" />
         </div>
 
-        <div class="question-details-sub">
-          <div class="sub-header">
-            <h3>Air</h3>
-            <img src="{% static 'images/002-oxygen-tank.svg' %}" alt="oxygen tank" />
+        <div class="question-details-ss-bt-container">
+          <div class="question-details-sub">
+            <div class="sub-header">
+              <h3>Air</h3>
+              <img src="{% static 'images/002-oxygen-tank.svg' %}" alt="oxygen tank" />
+            </div>
+
+            <div class="question-details-sub-inner">
+              <div class="field-wrapper">
+                <h3>Start (psi)</h3>
+                <h4>{{ dive.air_start }}</h4>
+              </div>
+
+              <div class="field-wrapper">
+                <h3>End (psi)</h3>
+                <h4>{{ dive.air_end }}</h4>
+              </div>
+
+              <div class="field-wrapper">
+                <h3>Type</h3>
+                <h4>{{ dive.air_choice }}</h4>
+              </div>
+            </div>
           </div>
 
-          <div class="question-details-sub-inner">
-            <div class="field-wrapper">
-              <h3>Start (psi)</h3>
-              {{ dive.air_start }}
+          <div class="question-details-sub">
+            <div class="sub-header">
+              <h3>Depth</h3>
+              <img src="{% static 'images/008-helmet.svg' %}" alt="helmet" />
             </div>
 
-            <div class="field-wrapper">
-              <h3>End (psi)</h3>
-              {{ dive.air_end }}
-            </div>
+            <div class="question-details-sub-inner">
+              <div class="field-wrapper">
+                <h3>Average</h3>
+                <h4>{{ dive.depth_avg }}</h4>
+              </div>
 
-            <div class="field-wrapper">
-              <h3>Air or Nitrox?</h3>
-              {{ dive.air_choice }}
-            </div>
-          </div>
-        </div>
-
-        <div class="question-details-sub">
-          <div class="sub-header">
-            <h3>Depth</h3>
-            <img src="{% static 'images/008-helmet.svg' %}" alt="helmet" />
-          </div>
-
-          <div class="question-details-sub-inner">
-            <div class="field-wrapper">
-              <h3>Average</h3>
-              {{ dive.depth_avg }}
-            </div>
-
-            <div class="field-wrapper"> 
-              <h3>Max</h3>
-              {{ dive.depth_max }}
+              <div class="field-wrapper"> 
+                <h3>Max</h3>
+                <h4>{{ dive.depth_max }}</h4>
+              </div>
             </div>
           </div>
         </div>
@@ -112,12 +114,12 @@
             <div class="question-details-sub-inner">
               <div class="field-wrapper">
                 <h3>Depth</h3>
-                {{ dive.safety_stop_depth }}
+                <h4>{{ dive.safety_stop_depth }}</h4>
               </div>
 
               <div class="field-wrapper">
                 <h3>Time (min)</h3>
-                {{ dive.safety_stop_time }}
+                <h4>{{ dive.safety_stop_time }}</h4>
               </div>
 
             </div>
@@ -132,12 +134,12 @@
             <div class="question-details-sub-inner">
               <div class="field-wrapper">
                 <h3>Bottom Time</h3>
-                {{ dive.bottom_time }}
+                <h4>{{ dive.bottom_time }}</h4>
               </div>
 
               <div class="field-wrapper">
                 <h3>Acc. Bottom Time</h3>
-                {{ dive.acc_bottom_time }}
+                <h4>{{ dive.acc_bottom_time }}</h4>
               </div>
             </div>
           </div>
@@ -159,7 +161,7 @@
             <img src="{% static 'images/cloudy-day.svg' %}" alt="helmet" />
           </div>
           <div class="field-wrapper">
-            {{ dive.weather }}
+            <h4>{{ dive.weather }}</h4>
           </div>
 
           <div class="sub-header">
@@ -167,25 +169,27 @@
             <img src="{% static 'images/handwash.svg' %}" alt="a diving log" />
           </div>
           <div class="field-wrapper">
-            {{ dive.visibility }}
+            <h4>{{ dive.visibility }}</h4>
           </div>
 
           <div class="sub-header">
             <h3>Temperature</h3>
             <img src="{% static 'images/laundry.svg' %}" alt="thermometer in water" />
           </div>
-          <div class="field-wrapper">
-            <h3>Air</h3>
-            {{ dive.temperature_air }}
-          </div>
-          <div class="field-wrapper">
-            <h3>Surface</h3>
-            {{ dive.temperature_surface }}
-          </div>
-          <div class="field-wrapper">
-            <h3>Bottom</h3>
-            {{ dive.temperature_bottom }}
-          </div>
+          <div class="temperature-wrapper">
+            <div class="field-wrapper ">
+              <h3>Air</h3>
+              <h4>{{ dive.temperature_air }}</h4>
+            </div>
+            <div class="field-wrapper">
+              <h3>Surface</h3>
+              <h4>{{ dive.temperature_surface }}</h4>
+            </div>
+            <div class="field-wrapper">
+              <h3>Bottom</h3>
+              <h4>{{ dive.temperature_bottom }}</h4>
+            </div>
+            </div>
         </div>
       </div>
 
@@ -204,30 +208,34 @@
             <h3>Exposure Protection</h3>
             <img src="{% static 'images/016-diver.svg' %}" alt="dive weights" />
           </div>
-          <div class="field-wrapper">
-            <h3>Suit</h3>
-            {{ dive.suit_desc }}
-          </div>
-          <div class="field-wrapper"> 
-            <h3>Thickness</h3>
-            {{ dive.suit_thickness }}
+          <div class="temperature-wrapper">
+            <div class="field-wrapper">
+              <h3>Suit</h3>
+              <h4>{{ dive.suit_desc }}</h4>
+            </div>
+            <div class="field-wrapper"> 
+              <h3>Thickness</h3>
+              <h4>{{ dive.suit_thickness }}</h4>
+            </div>
           </div>
           <div class="field-wrapper"> 
             <h3>Notes</h3>
-            {{ dive.suit_notes }}
+            <h4>{{ dive.suit_notes }}</h4>
           </div>
 
           <div class="sub-header">
             <h3>Weight</h3>
             <img src="{% static 'images/005-weights.svg' %}" alt="dive weights" />
           </div>
-          <div class="field-wrapper">
-            <h3>Weight (lb)</h3>
-            {{ dive.weight }}
-          </div>
-          <div class="field-wrapper"> 
-            <h3>Rating</h3>
-            {{ dive.weight_rating }}
+          <div class="weight-wrapper">
+            <div class="field-wrapper">
+              <h3>Weight (lb)</h3>
+              <h4>{{ dive.weight }}</h4>
+            </div>
+            <div class="field-wrapper"> 
+              <h3>Rating</h3>
+              <h4>{{ dive.weight_rating }}</h4>
+            </div>
           </div>
         </div>
       </div>
@@ -299,7 +307,7 @@
           </div>
           <div class="field-wrapper">
             <h3>Suit</h3>
-            {{ dive.suit_desc }}
+            <h4>{{ dive.suit_desc }}
           </div>
           
         </div>
