@@ -52,8 +52,8 @@
 }
 
 .questions {
-  margin: 3px 6px 3px;
-  padding: 15px 15px 25px ;
+  margin: 3px 6px 4px;
+  padding: 15px 15px 25px;
   border: 2px solid rgba(255, 255, 255, 0.212);
   border-radius: 12px;
 }
@@ -61,7 +61,7 @@
 .sub-header-main > h3  {
   font-size: clamp(2.8rem, 2.7vw, 3.2rem);
   margin: 10px 0 10px 0;
-  font-weight: 700;
+  font-weight: 650;
 }
 
 .sub-header > h3  {
@@ -102,6 +102,8 @@ select{
   .questions {
     display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 15px 25px 25px
   }
 
   .question-main,
@@ -109,11 +111,21 @@ select{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin: 0px 20px 6px;
   }
 
   .question-conditions-equipment-container {
     display: flex;
     flex-direction: row;
+    margin: 0px 20px 6px;
+  }
+
+  .question-conditions {
+    margin-right: 3px
+  }
+
+  .question-equipment {
+    margin-left: 3px
   }
 
   .question-conditions,
@@ -123,6 +135,10 @@ select{
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
+  }
+
+  .field-wrapper {
+    padding: 0 3px;
   }
 
   .question-main > .field-wrapper {

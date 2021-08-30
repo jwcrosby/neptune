@@ -71,6 +71,7 @@
   margin: 6px 0;
   font-size: var(--font-xtreme);
   font-weight: 550;
+  text-align: right;
 }
 
 .card h3, p {
