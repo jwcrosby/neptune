@@ -9,7 +9,12 @@
 
 .add-a-new {
   display: flex;
-  /* width: 100%; */
+}
+
+.dive-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-container {
