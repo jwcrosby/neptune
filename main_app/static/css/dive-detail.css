@@ -70,7 +70,7 @@
   margin: 3px 8px 5px;
   border: 2px solid rgba(255, 255, 255, 0.212);
   border-radius: 12px;
-    background-color: rgb(23, 43, 71);    
+  background-color: rgb(23, 43, 71);    
 
 }
 
@@ -158,21 +158,21 @@ h4 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 0px 20px 6px;
+    margin: 0px 20px 7px;
   }
 
   .question-conditions-equipment-container {
     display: flex;
     flex-direction: row;
-    margin: 0px 20px 6px;
+    margin: 0px 20px 7px;
   }
 
   .question-conditions {
-    margin-right: 3px;
+    margin-right: 4px;
   }
 
   .question-equipment {
-    margin-left: 3px;
+    margin-left: 4px;
   }
 
   .question-conditions,
