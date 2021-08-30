@@ -154,11 +154,7 @@ main {
 
 .page-header img {
   height: 40px;
-  margin-left: 10px;
-}
-
-.page-header img:first-of-type {
-  margin-left: 10px;
+  margin-right: 8px;
 }
 
 @media only screen and (min-width: 768px) {

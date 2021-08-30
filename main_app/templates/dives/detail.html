@@ -8,8 +8,8 @@
 
 <section class="page-header">
   <div class="page-header-sub-title">
-    <h1>Dive No. {{ dive.number }}</h1>
     <img src="{% static 'images/coral2.svg' %}" alt="coral" />
+    <h1>Dive No. {{ dive.number }}</h1>
   </div>
   <div class="page-header-sub-button">
     <section class="add-a-new">
@@ -23,93 +23,57 @@
 
 <div class="form-container">
   <div class="form">
-    <div class="questions question-main">
+    <div class="questions question-main ">
       <div class="field-wrapper">
         <div class="sub-header-main">
-          <h3>Date</h3>
           <img src="{% static 'images/020-diving.svg' %}" alt="calendar" />
+          <h3>Date</h3>
         </div>
-        <h4>{{ dive.date }}</h4>
+        <div class="data-container">
+          <h4>{{ dive.date }}</h4>
+        </div>
       </div>
 
       <div class="field-wrapper">
-        <div class="sub-header-main">
-          <h3>Dive Site</h3>
+        <div class="sub-header-main soft-border-left">
           <img
             src="{% static 'images/018-diving.svg' %}"
             alt="map pin on the ocean"
           />
+          <h3>Dive Site</h3>
         </div>
-        <h4>{{ dive.site }}</h4>
+        <div class="data-container soft-border-left">
+          <h4>{{ dive.site }}</h4>
+        </div>
       </div>
 
       <div class="field-wrapper">
-        <div class="sub-header-main">
-          <h3>Trip</h3>
+        <div class="sub-header-main soft-border-left">
           <img
             src="{% static 'images/island.svg' %}"
             alt="diving connections"
           />
+          <h3>Trip</h3>
         </div>
-        <h4>{{ dive.trip }}</h4>
+        <div class="data-container soft-border-left">
+          <h4 class="soft-border-left">{{ dive.trip }}</h4>
+        </div>
       </div>
     </div>
 
-
-    <div class="questions question-main">
-      <div class="field-wrapper">
-        <div class="sub-header-main">
-          <h3>Photo</h3>
-          <img src="{% static 'images/009-camera.svg' %}" alt="a diving log" />
-        </div>
-
-        <div class="dive-img">
-          {% if dive.photo.url %}
-          <img
-            src="{{dive.photo.url}}"
-            alt="A photo of {{dive.number}}"
-            class="usr-img"
-          />
-          {% else %}
-          <img
-            src="{% static 'images/placeholder.png' %}"
-            alt="placeholder image"
-          />
-          {% endif %}
-        </div>
-
-        <h3>Change dive photo</h3>
-        <p id="file-name"></p>
-        <form
-          action="{% url 'add_photo' dive.id %}"
-          enctype="multipart/form-data"
-          method="POST"
-        >
-          {% csrf_token %}
-          <label class="btn secondary"
-            >Choose photo
-            <input type="file" name="photo-file" id="file-input" />
-          </label>
-          <button type="submit" class="btn submit">Upload Photo</button>
-        </form>
-      </div>
-    </div>
 
     <div class="questions question-details">
       <div class="question-details-filler">
         <div class="sub-header-main">
-          <h3>Details</h3>
           <img src="{% static 'images/024-diving.svg' %}" alt="a diving log" />
+          <h3>Details</h3>
         </div>
 
         <div class="question-details-ss-bt-container">
           <div class="question-details-sub">
             <div class="sub-header">
+              <img src="{% static 'images/002-oxygen-tank.svg' %}" alt="oxygen tank" />
               <h3>Air</h3>
-              <img
-                src="{% static 'images/002-oxygen-tank.svg' %}"
-                alt="oxygen tank"
-              />
             </div>
 
             <div class="question-details-sub-inner">
@@ -130,19 +94,19 @@
             </div>
           </div>
 
-          <div class="question-details-sub">
+          <div class="question-details-sub soft-border-left">
             <div class="sub-header">
-              <h3>Depth</h3>
               <img src="{% static 'images/008-helmet.svg' %}" alt="helmet" />
+              <h3>Depth</h3>
             </div>
 
             <div class="question-details-sub-inner">
-              <div class="field-wrapper">
+              <div class="field-wrapper soft-border-left">
                 <h3>Average</h3>
                 <h4>{{ dive.depth_avg }}</h4>
               </div>
 
-              <div class="field-wrapper">
+              <div class="field-wrapper soft-border-left">
                 <h3>Max</h3>
                 <h4>{{ dive.depth_max }}</h4>
               </div>
@@ -151,10 +115,10 @@
         </div>
 
         <div class="question-details-ss-bt-container">
-          <div class="question-details-sub">
+          <div class="question-details-sub soft-border-top">
             <div class="sub-header">
-              <h3>Safety Stops</h3>
               <img src="{% static 'images/stop.svg' %}" alt="helmet" />
+              <h3>Safety Stops</h3>
             </div>
 
             <div class="question-details-sub-inner">
@@ -170,20 +134,20 @@
             </div>
           </div>
 
-          <div class="question-details-sub">
+          <div class="question-details-sub soft-border-left soft-border-top">
             <div class="sub-header">
-              <h3>Bottom Time</h3>
               <img src="{% static 'images/sea-life.svg' %}" alt="helmet" />
+              <h3>Bottom Time</h3>
             </div>
 
             <div class="question-details-sub-inner">
               <div class="field-wrapper">
-                <h3>Bottom Time</h3>
+                <h3>BT</h3>
                 <h4>{{ dive.bottom_time }}</h4>
               </div>
 
               <div class="field-wrapper">
-                <h3>Acc. Bottom Time</h3>
+                <h3>Acc. BT</h3>
                 <h4>{{ dive.acc_bottom_time }}</h4>
               </div>
             </div>
@@ -196,32 +160,32 @@
       <div class="questions question-conditions">
         <div class="question-conditions-filler">
           <div class="sub-header-main">
-            <h3>Conditions</h3>
             <img src="{% static 'images/sunrise.svg' %}" alt="a diving log" />
+            <h3>Conditions</h3>
           </div>
 
           <div class="sub-header">
-            <h3>Weather</h3>
             <img src="{% static 'images/cloudy-day.svg' %}" alt="helmet" />
+            <h3>Weather</h3>
           </div>
           <div class="field-wrapper">
             <h4>{{ dive.weather }}</h4>
           </div>
 
-          <div class="sub-header">
-            <h3>Visibility</h3>
+          <div class="sub-header soft-border-top">
             <img src="{% static 'images/handwash.svg' %}" alt="a diving log" />
+            <h3>Visibility</h3>
           </div>
           <div class="field-wrapper">
             <h4>{{ dive.visibility }}</h4>
           </div>
 
-          <div class="sub-header">
-            <h3>Temperature</h3>
+          <div class="sub-header soft-border-top">
             <img
               src="{% static 'images/laundry.svg' %}"
               alt="thermometer in water"
             />
+            <h3>Temperature</h3>
           </div>
           <div class="temperature-wrapper">
             <div class="field-wrapper">
@@ -243,13 +207,13 @@
       <div class="questions question-equipment">
         <div class="question-equipment-filler">
           <div class="sub-header-main">
-            <h3>Equipment</h3>
             <img src="{% static 'images/001-fins.svg' %}" alt="a diving log" />
+            <h3>Equipment</h3>
           </div>
 
           <div class="sub-header">
-            <h3>Exposure Protection</h3>
             <img src="{% static 'images/016-diver.svg' %}" alt="dive weights" />
+            <h3>Exposure Protection</h3>
           </div>
           <div class="temperature-wrapper">
             <div class="field-wrapper">
@@ -266,12 +230,12 @@
             <h4>{{ dive.suit_notes }}</h4>
           </div>
 
-          <div class="sub-header">
-            <h3>Weight</h3>
+          <div class="sub-header soft-border-top">
             <img
               src="{% static 'images/005-weights.svg' %}"
               alt="dive weights"
             />
+            <h3>Weight</h3>
           </div>
           <div class="weight-wrapper">
             <div class="field-wrapper">
@@ -292,11 +256,11 @@
       <div class="questions question-conditions">
         <div class="question-conditions-filler">
           <div class="sub-header-main">
-            <h3>Dive Buddies</h3>
             <img
               src="{% static 'images/023-divers.svg' %}"
               alt="a diving log"
             />
+            <h3>Dive Buddies</h3>
           </div>
 
           <section class="buddies">
@@ -356,11 +320,11 @@
       <div class="questions question-equipment">
         <div class="question-equipment-filler">
           <div class="sub-header-main">
-            <h3>Notes</h3>
             <img
               src="{% static 'images/038-diving.svg' %}"
               alt="a diving log"
             />
+            <h3>Notes</h3>
           </div>
 
           <section class="notes">
@@ -394,6 +358,45 @@
             {% endif %}
           </section>
         </div>
+      </div>
+    </div>
+
+    <div class="questions question-main">
+      <div class="field-wrapper">
+        <div class="sub-header-main">
+          <img src="{% static 'images/009-camera.svg' %}" alt="a diving log" />
+          <h3>Photo</h3>
+        </div>
+
+        <div class="dive-img">
+          {% if dive.photo.url %}
+          <img
+            src="{{dive.photo.url}}"
+            alt="A photo of {{dive.number}}"
+            class="usr-img"
+          />
+          {% else %}
+          <img
+            src="{% static 'images/placeholder.png' %}"
+            alt="placeholder image"
+          />
+          {% endif %}
+        </div>
+
+        <h3>Change dive photo</h3>
+        <p id="file-name"></p>
+        <form
+          action="{% url 'add_photo' dive.id %}"
+          enctype="multipart/form-data"
+          method="POST"
+        >
+          {% csrf_token %}
+          <label class="btn secondary"
+            >Select
+            <input type="file" name="photo-file" id="file-input" />
+          </label>
+          <button type="submit" class="btn submit">Upload</button>
+        </form>
       </div>
     </div>
   </div>
