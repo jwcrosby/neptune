@@ -1,38 +1,42 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends 'base.html' %} 
+{% load static %} 
 
 {% block head %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/trip-index.css' %}"/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/trip-index.css' %}"
+/>
 {% endblock %}
 
 {% block content %}
 
 <section class="page-header">
-  <h1>My Trips</h1>
-  <img src="{% static 'images/1.png' %}" alt="2" />
-  <img src="{% static 'images/2.png' %}" alt="3" />
-  <img src="{% static 'images/3.png' %}" alt="3" />
-  <img src="{% static 'images/4.png' %}" alt="4" />
+  <div class="page-header-sub-title">
+    <h1>My Trips</h1>
+    <img src="{% static 'images/018-diving.svg' %}" alt="diving map pin" />
+  </div>
+  <div class="page-header-sub-button">
+    <section class="add-a-new">
+    <a class="add-a-new-link btn submit" href="{% url 'trips_create' %}">+ Trip</a>
+    </section>
+  </div>
 </section>
 
 <section class="card-container">
   {% for trip in trips %}
-    <div class="card">
-      <a href="{% url 'trips_detail' trip.id %}"">
-        <div class="card-content">
-          <div class="card-img-container">
-              <img 
-                src="{% static 'images/tripplaceholder.jpg' %}" 
-                alt="placeholder image"
-                class="card-img"
-              >
-          </div>
-          <h2 class="card-title">{{ trip.destination }}</h2>
-            <p>{{ trip.country }}</p>
-            <p>{{ trip.start_date }} - {{ trip.end_date }}</p>
-        </div>
-      </a>
+  <div class="card">
+    <div class="card-bg">
+      <img src="{% static 'images/travel4.svg' %}" alt="suitcase with an island" />
     </div>
+    <a href="{% url 'trips_detail' trip.id %}">
+      <div class="card-content">
+        <h2>{{ trip.destination }}</h2>
+        <h3>{{ trip.country }}</h3>
+        <p>{{ trip.start_date }}</p>
+      </div>
+    </a>
+  </div>
   {% endfor %}
 </section>
 

@@ -23,11 +23,11 @@
   width: 100%;
   height: 150px;
   margin: 15px;
-  background-color: rgba(224, 173, 43, 0.75);
+  background-color: rgba(224, 173, 43, 0.349);
   border: solid 2px rgba(228, 189, 62, 0.603);
-  box-shadow: 4px 4px 6px -1px rgb(73, 94, 163);
+  box-shadow: 4px 4px 5px -1px rgb(73, 94, 163);
   position: relative;
-  border-radius: 3px;
+  border-radius: 4px;
   opacity: .92;
 }
 
