@@ -100,8 +100,6 @@ main {
   font-family: inherit;
   opacity: .93;
   color: white;
-  background-color: var(--button-bg);
-  border-color: var(--button-bg);
 }
 
 .btn:hover {
@@ -110,24 +108,43 @@ main {
   background-color: var(--button-bg-hover);
 }
 
-.submit:hover {
-  background-color: var(--submit);
-  border-color: var(--submit);
+.submit {
+  background-color: var(--button-bg);
+  border-color: var(--button-bg);
 }
 
-.secondary:hover {
+.submit:hover {
+  background-color: var(--submit);
+}
+
+.secondary {
   background-color: var(--secondary);
   border-color: var(--secondary);
 }
 
-.warn:hover {
+.secondary:hover {
+  background-color: var(--secondary);
+  border-color: var(--button-bg);
+}
+
+.warn {
   background-color: var(--warn);
   border-color: var(--warn);
 }
 
-.danger:hover {
+.warn:hover {
+  background-color: var(--warn);
+  border-color: var(--button-bg);
+}
+
+.danger{
   background-color: var(--danger);
   border-color: var(--danger);
+}
+
+.danger:hover {
+  background-color: var(--danger);
+  border-color: var(--button-bg);
 }
 
 .page-header h1 {
