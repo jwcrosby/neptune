@@ -38,6 +38,7 @@
   position: absolute;
   display: inline-flex;
   left: 0;
+  bottom: -11px;
   width: 93%;
   height: 93%;
   opacity: .44;
@@ -97,8 +98,8 @@
   .card-bg {
     position: absolute;
     display: inline-flex;
-    bottom: 0;
     left: 0;
+    bottom: -8px;
     width: 63%;
     height: 63%;
     opacity: .42;
@@ -111,7 +112,7 @@
 
   .card h2 {
     margin: 6px 0;
-    font-size: var(--font-xxl);
+    font-size: var(--font-xl);
   }
   
   .card h3, p {
