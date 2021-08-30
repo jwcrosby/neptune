@@ -43,7 +43,7 @@ def dives_detail(request, dive_id):
 class DiveCreate(LoginRequiredMixin, CreateView):
     model = Dive
     fields = ['number', 'date', 'site', 'trip', 'air_start', 'air_end', 'air_choice', 'depth_avg', 'depth_max', 'safety_stop_depth', 'safety_stop_time', 'bottom_time',
-                'acc_bottom_time', 'temperature_air', 'temperature_surface', 'temperature_bottom', 'visibility', 'weather', 'suit_desc', 'suit_thickness', 'suit_notes', 'weight', 'weight_rating']
+              'acc_bottom_time', 'temperature_air', 'temperature_surface', 'temperature_bottom', 'visibility', 'weather', 'suit_desc', 'suit_thickness', 'suit_notes', 'weight', 'weight_rating']
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -53,7 +53,7 @@ class DiveCreate(LoginRequiredMixin, CreateView):
 class DiveUpdate(LoginRequiredMixin, UpdateView):
     model = Dive
     fields = ['number', 'date', 'site', 'trip', 'air_start', 'air_end', 'air_choice', 'depth_avg', 'depth_max', 'safety_stop_depth', 'safety_stop_time', 'bottom_time',
-                'acc_bottom_time', 'temperature_air', 'temperature_surface', 'temperature_bottom', 'visibility', 'weather', 'suit_desc', 'suit_thickness', 'suit_notes', 'weight', 'weight_rating']
+              'acc_bottom_time', 'temperature_air', 'temperature_surface', 'temperature_bottom', 'visibility', 'weather', 'suit_desc', 'suit_thickness', 'suit_notes', 'weight', 'weight_rating']
 
 
 class DiveDelete(LoginRequiredMixin, DeleteView):
@@ -71,19 +71,6 @@ def add_note(request, dive_id):
     return redirect('dives_detail', dive_id=dive_id)
 
 
-class BuddyCreate(LoginRequiredMixin, CreateView):
-    model = Buddy
-    fields = ['name', 'icon']
-
-    def form_valid(self, form):
-        form.instance.user = self.request.user
-        return super().form_valid(form)
-
-
-class BuddyList(LoginRequiredMixin, ListView):
-    model = Buddy
-
-
 @login_required
 def buddies_index(request):
     buddies = Buddy.objects.filter(user=request.user)
@@ -92,6 +79,15 @@ def buddies_index(request):
 
 class BuddyDetail(LoginRequiredMixin, DetailView):
     model = Buddy
+
+
+class BuddyCreate(LoginRequiredMixin, CreateView):
+    model = Buddy
+    fields = ['name', 'icon']
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 
 class BuddyUpdate(LoginRequiredMixin, UpdateView):
