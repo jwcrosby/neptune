@@ -1,23 +1,27 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/dive-delete-form.css' %}" />
+{% endblock %}
+
 {% block content %}
 
 <div class="page-header">
   <h1>Delete Dive?</h1>
-  <img src="{% static 'images/helmet3.png' %}" alt="a diving helmet" />
 </div>
-<h2>Are you sure you want to delete {{ object.name }}?</h2>
 
-<form action="" method="POST" class="form">
+<div class='form-container'>
+  <form action="" method="POST" class="form" autocomplete="off">
   {% csrf_token %}
-  <a 
-    href="{% url 'dives_detail' dive.id %}" 
-    class="btn secondary"
-  >
-    Cancel
-  </a>
-  <button type="submit" class="btn danger">Yes - Delete!</button>
-</form>
+    <div class="questions">
+      <div class="field-wrapper">
+        <h2>Are you sure you want to delete Dive No. {{ object.number }}?</h2>
+        <div class='button-container'>
+          <button type="submit" class="btn danger">Delete!</button>
+          <a href="{% url 'dives_detail' dive.id %}" class="btn secondary">Cancel</a>
+    </div>
+  </form>
+</div>
 
 {% endblock %}

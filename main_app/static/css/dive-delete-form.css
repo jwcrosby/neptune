@@ -1,0 +1,81 @@
+
+.main-field-header img:first-of-type {
+  margin-left: 12px;
+}
+
+.form-container {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.questions {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  margin: 0 16px;
+  padding: 22px 22px 13px;
+  border: 2px solid rgba(255, 255, 255, 0.212);
+  border-radius: 12px;
+}
+
+.sub-header-main > h3  {
+  font-size: clamp(2.8rem, 2.7vw, 3.2rem);
+  margin: 10px 0 10px 0;
+  font-weight: 700;
+}
+
+.sub-header > h3  {
+  font-size: clamp(2.3rem, 2.2vw, 3rem);
+  margin: 10px 0 10px 0;
+  font-weight: 600;
+}
+
+.field-wrapper > h2  {
+  font-size: clamp(1.9rem, 1.4vw, 2.4rem);
+  font-weight: 400;
+}
+
+input,
+select {
+  width: 100%;
+  color: white;
+  background-color: #0a1629;
+  font-size: 1.8rem;
+  padding: 2px;
+  line-height: 28px;
+  border-radius: 2px;
+  font-weight: 400;
+}
+
+select{
+  height: 35px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-self: center;
+}
+
+.btn {
+  align-self: flex-end;
+  margin: 10px 0 10px 10px;
+}
+
+
+@media only screen and (min-width: 768px) {
+  main {
+    max-width: 1300px;
+    min-height: calc(100vh - 53px);
+  }
+}

@@ -32,11 +32,12 @@ body {
   --borders: rgb(33, 37, 43) solid 2px;
   --text-color: #ffffff;
   --link-hover-color: rgb(16, 56, 158);
+  --button-bg: rgba(224, 173, 43, 0.678);
   --button-bg-hover: #0e1b33;
-  --submit: rgba(224, 173, 43, 0.678);
-  --warn: rgb(255, 102, 0);
-  --danger: rgb(220, 20, 30);
-  --secondary: rgb(57, 57, 57);
+  --submit: rgba(116, 199, 61, 0.623);
+  --warn: rgba(255, 102, 0, 0.623);
+  --danger: rgba(219, 51, 51, 0.623);
+  --secondary: rgba(75, 70, 70, 0.623);
   --card-box-shadow: 5px 5px 6px -1px rgb(0, 21, 83);
   --font-xtreme: 4.2rem;
   --font-xxl: 3.4rem;
@@ -98,6 +99,9 @@ main {
   cursor: pointer;
   font-family: inherit;
   opacity: .93;
+  color: white;
+  background-color: var(--button-bg);
+  border-color: var(--button-bg);
 }
 
 .btn:hover {
@@ -106,27 +110,23 @@ main {
   background-color: var(--button-bg-hover);
 }
 
-.submit {
-  color: white;
+.submit:hover {
   background-color: var(--submit);
   border-color: var(--submit);
 }
 
-.secondary {
-  color: var(--secondary);
-  background-color: var(--submit);
+.secondary:hover {
+  background-color: var(--secondary);
   border-color: var(--secondary);
 }
 
-.warn {
-  color: var(--warn);
-  background-color: var(--submit);
+.warn:hover {
+  background-color: var(--warn);
   border-color: var(--warn);
 }
 
-.danger {
-  color: var(--danger);
-  background-color: var(--submit);
+.danger:hover {
+  background-color: var(--danger);
   border-color: var(--danger);
 }
 
