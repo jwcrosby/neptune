@@ -289,45 +289,25 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.dive-container {
-  padding: 35px 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.buddy-content > img {
+  height: 40px;
 }
 
-.dive-img {
-  width: 75%;
-  max-width: 350px;
-}
 
-.usr-img {
-  width: 100%;
-  border-radius: var(--card-border-radius);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .dive-details {
   width: 98%;
@@ -473,23 +453,9 @@
   margin-left: 10px;
 }
 
-#file-input {
-  overflow: hidden;
-  position: absolute;
-  width: 0.1px;
-  height: 0.1px;
-}
-
-#file-name {
-  margin-bottom: 10px;
-}
 
 .usr-img {
   width: 100%;
-}
-
-.dive-details h3 {
-  margin: 16px 0 10px 0;
 }
 
 #file-input {
@@ -504,32 +470,9 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .dive-container {
-    padding: 35px 30px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: start;
-  }
-
   .dive-img {
     width: 25%;
     max-width: 250px;
     margin-right: 25px;
-  }
-
-  .notes-buddy-container {
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: flex-start;
-  }
-
-  .notes-buddy-container > section {
-    width: 45%;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .notes-buddy-container {
-    padding: 0 40px;
   }
 }
