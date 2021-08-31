@@ -24,20 +24,24 @@
 </section>
 
 <section class="card-container">
-  {% for dive in dives %}
-  <div class="card">
-    <div class="card-bg">
-      <img src="{% static 'images/coral.svg' %}" alt="pink coral" />
-    </div>
-    <a href="{% url 'dives_detail' dive.id %}">
-      <div class="card-content">
-        <h2>{{ dive.number }}</h2>
-        <h3>{{ dive.site }}</h3>
-        <p>{{ dive.date }}</p>
+  {% if dives %}
+    {% for dive in dives %}
+    <div class="card">
+      <div class="card-bg">
+        <img src="{% static 'images/coral.svg' %}" alt="pink coral" />
       </div>
-    </a>
-  </div>
-  {% endfor %}
+      <a href="{% url 'dives_detail' dive.id %}">
+        <div class="card-content">
+          <h2>{{ dive.number }}</h2>
+          <h3>{{ dive.site }}</h3>
+          <p>{{ dive.date }}</p>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  {% else %}
+  {% comment %} Add message for users with no dives {% endcomment %}
+  {% endif %}
 </section>
 
 {% endblock %}
