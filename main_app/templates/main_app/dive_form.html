@@ -9,6 +9,7 @@
 {% endblock %} {% block content %}
 
 <div class="page-header">
+  <img src="{% static 'images/coral2.svg' %}" alt="coral" />
   {% if object %}
   <h1>Edit Dive No. {{ object.number}}</h1>
   {% else %}
@@ -23,32 +24,32 @@
       <div class="field-wrapper">
         {{ form.number.errors }}
         <div class="sub-header-main">
-          <h3><label for="id_number">Dive No.</label></h3>
           <img src="{% static 'images/036-diving.svg' %}" alt="a sign with diving goggles" />
+          <h3><label for="id_number">Dive No.</label></h3>
         </div>
         {{ form.number }}
       </div>
       <div class="field-wrapper">
         {{ form.date.errors }}
         <div class="sub-header-main">
-          <h3><label for="id_date">Date</label></h3>
           <img src="{% static 'images/020-diving.svg' %}" alt="calendar" />
+          <h3><label for="id_date">Date</label></h3>
         </div>
         {{ form.date }}
       </div>
       <div class="field-wrapper">
         {{ form.site.errors }}
         <div class="sub-header-main">
-          <h3><label for="id_site">Dive Site</label></h3>
           <img src="{% static 'images/018-diving.svg' %}" alt="map pin on the ocean" />
+          <h3><label for="id_site">Dive Site</label></h3>
         </div>
         {{ form.site }}
       </div>
       <div class="field-wrapper">
         {{ form.trip.errors }}
         <div class="sub-header-main">
+          <img src="{% static 'images/island.svg' %}" alt="diving connections" />
           <h3><label for="id_trip">Trip</label></h3>
-          <img src="{% static 'images/island.svg'' %}" alt="diving connections" />
         </div>
         {{ form.trip }}
       </div>
@@ -58,13 +59,13 @@
     <div class="questions question-details">
       <div class="question-details-filler">
         <div class="sub-header-main">
-          <h3>Details</h3>
           <img src="{% static 'images/024-diving.svg' %}" alt="a diving log" />
+          <h3>Details</h3>
         </div>
         <div class="question-details-sub">
           <div class="sub-header">
-            <h3>Air</h3>
             <img src="{% static 'images/002-oxygen-tank.svg' %}" alt="oxygen tank" />
+            <h3>Air</h3>
           </div>
           <div class="question-details-sub-inner">
             <div class="field-wrapper">
@@ -87,8 +88,8 @@
 
         <div class="question-details-sub">
           <div class="sub-header">
-            <h3>Depth</h3>
             <img src="{% static 'images/008-helmet.svg' %}" alt="helmet" />
+            <h3>Depth</h3>
           </div>
           <div class="question-details-sub-inner">
             <div class="field-wrapper">
@@ -107,8 +108,8 @@
         <div class="question-details-ss-bt-container">
           <div class="question-details-sub">
             <div class="sub-header">
-              <h3>Safety Stops</h3>
               <img src="{% static 'images/stop.svg' %}" alt="helmet" />
+              <h3>Safety Stops</h3>
             </div>
             <div class="question-details-sub-inner">
               <div class="field-wrapper">
@@ -126,8 +127,8 @@
 
           <div class="question-details-sub">
             <div class="sub-header">
-              <h3>Bottom Time</h3>
               <img src="{% static 'images/sea-life.svg' %}" alt="helmet" />
+              <h3>Bottom Time</h3>
             </div>
             <div class="question-details-sub-inner">
               <div class="field-wrapper">
@@ -150,13 +151,13 @@
       <div class="questions question-conditions">
         <div class="question-conditions-filler">
           <div class="sub-header-main">
-            <h3>Conditions</h3>
             <img src="{% static 'images/sunrise.svg' %}" alt="a diving log" />
+            <h3>Conditions</h3>
           </div>
 
           <div class="sub-header">
-            <h3>Weather</h3>
             <img src="{% static 'images/cloudy-day.svg' %}" alt="helmet" />
+            <h3>Weather</h3>
           </div>
           <div class="field-wrapper">
             {{ form.weather.errors }}
@@ -165,8 +166,8 @@
           </div>
 
           <div class="sub-header">
-            <h3>Visibility</h3>
             <img src="{% static 'images/handwash.svg' %}" alt="a diving log" />
+            <h3>Visibility</h3>
           </div>
           <div class="field-wrapper">
             {{ form.visibility.errors }}
@@ -175,8 +176,8 @@
           </div>
 
           <div class="sub-header">
-            <h3>Temperature</h3>
             <img src="{% static 'images/laundry.svg' %}" alt="thermometer in water" />
+            <h3>Temperature</h3>
           </div>
           <div class="field-wrapper">
             {{ form.temperature_air.errors }}
@@ -200,13 +201,13 @@
       <div class="questions question-equipment">
         <div class="question-equipment-filler">
           <div class="sub-header-main">
-            <h3>Equipment</h3>
             <img src="{% static 'images/001-fins.svg' %}" alt="a diving log" />
+            <h3>Equipment</h3>
           </div>
 
           <div class="sub-header">
-            <h3>Exposure Protection</h3>
             <img src="{% static 'images/016-diver.svg' %}" alt="dive weights" />
+            <h3>Exposure Protection</h3>
           </div>
           <div class="field-wrapper">
             {{ form.suit_desc.errors }}
@@ -225,8 +226,8 @@
           </div>
 
           <div class="sub-header">
-            <h3>Weight</h3>
             <img src="{% static 'images/005-weights.svg' %}" alt="dive weights" />
+            <h3>Weight</h3>
           </div>
           <div class="field-wrapper">
             {{ form.weight.errors }}

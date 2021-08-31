@@ -1,24 +1,34 @@
-.sub-header, .sub-header-main {
+
+.page-header-sub-title {
+  display: flex;
+}
+
+.add-a-new {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dive-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub-header,
+.sub-header-main {
   display: flex;
   align-items: center;
 }
 
 .sub-header img {
   height: 30px;
-  margin-left: 10px;
-}
-
-.sub-header img:first-of-type {
-  margin-left: 8px;
+  margin-right: 10px;
 }
 
 .sub-header-main img {
   height: 30px;
-  margin-left: 10px;
-}
-
-.sub-header-main img:first-of-type {
-  margin-left: 12px;
+  margin: 0 6px 0 3px;
 }
 
 .main-field-header {
@@ -28,11 +38,7 @@
 
 .main-field-header img {
   height: 30px;
-  margin-left: 5px;
-}
-
-.main-field-header img:first-of-type {
-  margin-left: 12px;
+  margin-right: 5px;
 }
 
 .form-container {
@@ -52,54 +58,267 @@
 }
 
 .questions {
-  margin: 3px 6px 4px;
-  padding: 15px 15px 25px;
+  margin: 3px 8px 5px;
   border: 2px solid rgba(255, 255, 255, 0.212);
-  border-radius: 12px;
+  border-radius: 10px;
+  background-color: rgba(23, 43, 71, 0.801);
 }
-/* 
-.question-main {
-  background-color: rgba(207, 143, 23, 0.275);
-} */
 
-.sub-header-main > h3  {
-  font-size: clamp(2.8rem, 2.7vw, 3.2rem);
+.questions-main {
+  width: 100%;
+}
+
+.sub-header-main {
+  background-color: rgba(29, 54, 90, 0.801);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.212);
+  width: 100%;
+}
+
+.sub-header-main > h3 {
+  font-size: clamp(2.7rem, 2.6vw, 3.1rem);
   margin: 10px 0 10px 0;
   font-weight: 650;
 }
 
-.sub-header > h3  {
+.sub-header {
+  background-color: rgba(25, 48, 80, 0.801);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.212);
+  width: 100%;
+}
+
+.sub-header > h3 {
   font-size: clamp(2.3rem, 2.2vw, 3rem);
-  margin: 10px 0 10px 0;
+  margin: 10px 0;
   font-weight: 600;
 }
 
-.field-wrapper > h3  {
-  font-size: clamp(1.9rem, 1.4vw, 2.4rem);
-  margin: 10px 0 10px 0;
-  font-weight: 400;
-}
-
-input,
-select {
+.field-wrapper {
+  height: 100%;
   width: 100%;
-  color: white;
-  background-color: #0a1629;
-  font-size: 1.8rem;
-  padding: 2px;
-  line-height: 28px;
-  border-radius: 2px;
-  font-weight: 400;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
-select{
-  height: 35px;
+.field-wrapper > h3 {
+  font-size: clamp(1.7rem, 1.3vw, 2.2rem);
+  margin: 10px 12px;
+  font-weight: 465;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.data-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+h4 {
+  font-weight: 370;
+  font-size: clamp(1.5rem, 1.1vw, 2rem);
+  padding: 8px 12px 10px 12px;
+  margin-bottom: 0;
 }
 
 .btn {
   align-self: flex-end;
-  margin: 15px 40px 20px 0;
+  margin-left: 10px;
+  margin-bottom: 0;
 }
+
+.soft-border-left {
+  border-left: 1px solid rgba(255, 255, 255, 0.212);
+}
+
+.soft-border-top {
+  border-top: 1px solid rgba(255, 255, 255, 0.212);
+}
+
+.hard-border-top {
+  border-top: 2px solid rgba(255, 255, 255, 0.212);
+}
+
+  .buddy-content > img {
+    height: 52px
+  }
+
+
+
+  input,
+  select {
+    width: 100%;
+    color: white;
+    background-color: rgba(14, 27, 51, 0.725);
+    font-size: clamp(1.6rem, 1.1vw, 2rem);
+    line-height: 28px;
+    border-radius: 2px;
+    font-weight: 400;
+  }
+
+  h4 {
+    font-weight: 370;
+  }
+  
+  select{
+    height: 35px;
+  }
+
+@media only screen and (min-width: 768px) {
+  .questions {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+  }
+
+  .question-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .question-main,
+  .question-details,
+  .question-photo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0px 20px 8px;
+  }
+
+  .question-conditions-equipment-container {
+    display: flex;
+    flex-direction: row;
+    margin: 0px 20px 8px;
+  }
+
+  .question-conditions {
+    margin-right: 4px;
+  }
+
+  .question-equipment {
+    margin-left: 4px;
+  }
+
+  .question-conditions,
+  .question-equipment {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .question-main > .field-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .question-details-filler,
+  .question-conditions-filler,
+  .question-equipment-filler {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .question-details-ss-bt-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .question-details-sub {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .question-details-sub-inner {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+  }
+
+  .question-details-sub-inner > .field-wrapper {
+    display: flex;
+    width: 100%;
+  }
+
+  .temperature-wrapper,
+  .suit-wrapper,
+  .weight-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .temperature-wrapper > .field-wrapper {
+    width: 100%;
+  }
+
+  .suit-wrapper > .field-wrapper {
+    width: 100%;
+  }
+
+  .weight-wrapper > .field-wrapper {
+    width: 100%;
+  }
+
+  .soft-border-top {
+    border-top: none;
+  }
+
+  .hard-border-top {
+    border-top: none;
+  }
+
+  .soft-border-top-expand {
+    border-top: 1px solid rgba(255, 255, 255, 0.212);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    max-width: 1300px;
+    min-height: calc(100vh - 53px);
+  }
+
+  .sub-header,
+  .sub-header-main h2 {
+    font-size: var(--font-xxl);
+  }
+
+  .sub-header img {
+    height: 35px;
+    margin: 0 6px 0 6px;
+  }
+
+  .sub-header-main img {
+    height: 35px;
+    margin: 0 6px 0 6px;
+  }
+
+  .main-field-header h3 {
+    font-size: var(--font-xl);
+  }
+
+  .main-field-header img {
+    height: 40px;
+    margin-right: 8px;
+  }
+
+}
+
+
+@media only screen and (min-width: 768px) {
+  .dive-img {
+    width: 25%;
+    max-width: 250px;
+    margin-right: 25px;
+  }
+}
+
 
 
 @media only screen and (min-width: 768px) {
@@ -107,7 +326,6 @@ select{
     display: flex;
     flex-direction: column;
     margin: 0;
-    padding: 15px 25px 25px
   }
 
   .question-main,
@@ -225,5 +443,13 @@ select{
 
   .main-field-header img:first-of-type {
     margin-left: 10px;
+  }
+
+
+  .question-main{
+    background-color: rgb(28,52,87);
+  }
+  .field-wrapper{
+    padding: 0 10px 6px;
   }
 }
