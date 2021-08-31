@@ -254,7 +254,7 @@
 
 
     <div class="question-conditions-equipment-container">
-      <div class="questions question-conditions">
+      <div class="questions question-conditions question-buddies">
 
         <div class="sub-header-main">
           <img
@@ -275,16 +275,16 @@
               {% for buddy in dive.buddies.all %}
               <div class="buddy-container">
                 <a href="{% url 'buddies_detail' buddy.id %}">
-                  <div class="buddy-content">
-                  {% comment %} {% if buddy.icon %}
+                  <div class="buddy-content attending-buddies">
+                  {% if buddy.icon %}
                     {% if buddy.icon == "A" %}
                     <img src="{% static 'images/014-diver.svg' %}" alt="brunette diver" />
                     {% elif buddy.icon == "B" %}
                     <img src="{% static 'images/015-diver.svg' %}" alt="blonde diver" />
-                    {% else %} {% endcomment %}
+                    {% else %} 
                     <img src="{% static 'images/016-diver.svg' %}" alt="mysterious diver" />
-                    {% comment %} {% endif %}
-                  {% endif %} {% endcomment %}
+                    {% endif %}
+                  {% endif %}
                     <h3>{{ buddy.name }}</h3>
                   </div>
                 </a>
@@ -300,21 +300,21 @@
             <h3>Available</h3>
           </div>
 
-          <div class="subsection-content">
+          <div class="subsection-content buddy-subsection">
             {% if buddies_not_currently_attending.count %} 
               {% for buddy in buddies_not_currently_attending.all %}
               <div class="buddy-container">
                 <a href="{% url 'buddies_detail' buddy.id %}">
-                  <div class="buddy-content">
-                  {% comment %} {% if buddy.icon %}
+                  <div class="buddy-content available-buddies">
+                  {% if buddy.icon %}
                     {% if buddy.icon == "A" %}
                     <img src="{% static 'images/014-diver.svg' %}" alt="brunette diver" />
                     {% elif buddy.icon == "B" %}
                     <img src="{% static 'images/015-diver.svg' %}" alt="blonde diver" />
-                    {% else %} {% endcomment %}
+                    {% else %} 
                     <img src="{% static 'images/016-diver.svg' %}" alt="mysterious diver" />
-                    {% comment %} {% endif %}
-                  {% endif %} {% endcomment %}
+                    {% endif %}
+                  {% endif %} 
                     <h3>{{ buddy.name }}</h3>
                   </div>
                 </a>
@@ -390,17 +390,12 @@
         </div>
       <div class="field-wrapper">
         <div class="dive-img-container">
-          <div class="dive-img">
             {% if dive.photo.url %}
+          <div class="dive-img">
             <img
               src="{{dive.photo.url}}"
               alt="A photo of {{dive.number}}"
               class="usr-img"
-            />
-            {% else %}
-            <img
-              src="{% static 'images/placeholder.png' %}"
-              alt="placeholder image"
             />
             {% endif %}
           </div>
