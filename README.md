@@ -18,7 +18,7 @@
 
 ![DESKTOP SCREENSHOT](/main_app/static/images/readme/splash.png) 
 
-![DIVELOG FORM SCREENSHOT](/main_app/static/images/readme/diveform.png) 
+![DIVELOG FORM SCREENSHOT](/main_app/static/images/readme/diveform2.png) 
 
 ## Attributions
 
