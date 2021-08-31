@@ -44,7 +44,7 @@
   margin-right: 5px;
 }
 
-.form-container {
+.dive-log-container {
   display: flex;
   align-self: center;
   justify-content: center;
@@ -52,7 +52,7 @@
   width: 100%;
 }
 
-.form {
+.dive-log {
   display: flex;
   align-self: center;
   justify-content: center;
@@ -122,6 +122,13 @@
 }
 
 h4 {
+  font-weight: 370;
+  font-size: clamp(1.5rem, 1.1vw, 2rem);
+  padding: 8px 12px 10px 12px;
+  margin-bottom: 0;
+}
+
+p {
   font-weight: 370;
   font-size: clamp(1.5rem, 1.1vw, 2rem);
   padding: 8px 12px 10px 12px;

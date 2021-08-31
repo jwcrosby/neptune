@@ -1,23 +1,33 @@
-{% extends 'base.html' %} 
-{% load static %} 
-
-{% block head %}
+{% extends 'base.html' %} {% load static %} {% block head %}
 <link
   rel="stylesheet"
   type="text/css"
   href="{% static 'css/buddy-detail.css' %}"
 />
-{% endblock %}
+{% endblock %} {% block content %}
 
-{% block content %}
-  
-<div class="card">
-  <div class="card-bg"></div>
-  <div class="card-content">
-    <h2>{{ buddy.name }}</h2>
+<section class="page-header">
+  <div class="page-header-sub-title">
+    {% if buddy.icon %}
+      {% if buddy.icon == "A" %}
+      <img src="{% static 'images/014-diver.svg' %}" alt="brunette diver" />
+      {% elif buddy.icon == "B" %}
+      <img src="{% static 'images/015-diver.svg' %}" alt="blonde diver" />
+      {% else %}
+      <img src="{% static 'images/016-diver.svg' %}" alt="mysterious diver" />
+      {% endif %}
+    {% endif %}
+    <h1>{{ buddy.name }}</h1>
   </div>
-</div>
-<a href="{% url 'buddies_update' buddy.id %}" class="btn warn">Edit</a>
-<a href="{% url 'buddies_delete' buddy.id %}" class="btn danger">Delete</a>
+  <div class="page-header-sub-button">
+    <section class="add-a-new">
+      <div class="buddy-actions">
+        <a href="{% url 'buddies_update' buddy.id %}" class="btn warn">Edit</a>
+        <a href="{% url 'buddies_delete' buddy.id %}" class="btn danger">Delete</a>
+      </div>
+    </section>
+  </div>
+</section>
+ 
 
 {% endblock %}
