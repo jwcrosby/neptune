@@ -6,7 +6,7 @@
 
 * Python
 * Django
-* PostgreSQL*
+* PostgreSQL
 * JavaScript
 * HTML
 * CSS
