@@ -64,7 +64,7 @@ class Buddy(models.Model):
 class Dive(models.Model):
     number = models.IntegerField('Dive #')
     date = models.DateField(blank=True, null=True)
-    site = models.CharField('Dive Site', max_length=100, blank=True, null=True) 
+    site = models.CharField('Site', max_length=100, blank=True, null=True) 
     air_start = models.IntegerField('Air Start (psi)', blank=True, null=True)
     air_end = models.IntegerField('Air End (psi)', blank=True, null=True)
     air_choice = models.CharField(
