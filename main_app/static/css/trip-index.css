@@ -87,11 +87,7 @@
 }
 
 .page-header > img {
-  margin-left: 10px;
-}
-
-.page-header > img:first-of-type {
-  margin-left: 15px;
+  margin-right: 105px;
 }
 
 @media only screen and (min-width: 776px) {

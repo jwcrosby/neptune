@@ -2,28 +2,20 @@
 <link
   rel="stylesheet"
   type="text/css"
-  href="{% static 'css/buddy-detail.css' %}"
+  href="{% static 'css/trip-detail.css' %}"
 />
 {% endblock %} {% block content %}
 
 <section class="page-header">
   <div class="page-header-sub-title">
-    {% if buddy.icon %}
-      {% if buddy.icon == "A" %}
-      <img src="{% static 'images/014-diver.svg' %}" alt="brunette diver" />
-      {% elif buddy.icon == "B" %}
-      <img src="{% static 'images/015-diver.svg' %}" alt="blonde diver" />
-      {% else %}
-      <img src="{% static 'images/016-diver.svg' %}" alt="mysterious diver" />
-      {% endif %}
-    {% endif %}
-    <h1>{{ buddy.name }}</h1>
+    <img src="{% static 'images/island.svg' %}" alt="mysterious diver" />
+    <h1>{{ trip.destination }}</h1>
   </div>
   <div class="page-header-sub-button">
     <section class="add-a-new">
-      <div class="buddy-actions">
-        <a href="{% url 'buddies_update' buddy.id %}" class="btn warn">Edit</a>
-        <a href="{% url 'buddies_delete' buddy.id %}" class="btn danger">Delete</a>
+      <div class="trip-actions">
+        <a href="{% url 'trips_update' trip.id %}" class="btn warn">Edit</a>
+        <a href="{% url 'trips_delete' trip.id %}" class="btn danger">Delete</a>
       </div>
     </section>
   </div>
@@ -34,51 +26,29 @@
 
     <div class="questions question-details">
       <div class="question-details-filler">
-        <div class="sub-header-main">
-          <img src="{% static 'images/024-diving.svg' %}" alt="a diving log" />
-          <h3>Details</h3>
-        </div>
 
         <div class="question-details-ss-bt-container">
           <div class="question-details-sub">
             <div class="sub-header">
-              <img src="{% static 'images/002-oxygen-tank.svg' %}" alt="oxygen tank" />
-              <h3>Air</h3>
+              <img src="{% static 'images/island.svg' %}" alt="oxygen tank" />
+              <h3>Destination</h3>
             </div>
-
             <div class="question-details-sub-inner">
               <div class="field-wrapper">
-                <h3>Start (psi)</h3>
-                <h4>{{ dive.air_start }}</h4>
-              </div>
-
-              <div class="field-wrapper soft-border-left">
-                <h3>End (psi)</h3>
-                <h4>{{ dive.air_end }}</h4>
-              </div>
-
-              <div class="field-wrapper soft-border-left">
-                <h3>Type</h3>
-                <h4>{{ dive.air_choice }}</h4>
+                <h3>{{ trip.destination }}</h3>
               </div>
             </div>
           </div>
 
           <div class="question-details-sub soft-border-left soft-border-top">
             <div class="sub-header">
-              <img src="{% static 'images/008-helmet.svg' %}" alt="helmet" />
-              <h3>Depth</h3>
+              <img src="{% static 'images/earth-globe.svg' %}" alt="helmet" />
+              <h3>Country</h3>
             </div>
 
             <div class="question-details-sub-inner">
               <div class="field-wrapper soft-border-left">
-                <h3>Average</h3>
-                <h4>{{ dive.depth_avg }}</h4>
-              </div>
-
-              <div class="field-wrapper soft-border-left">
-                <h3>Max</h3>
-                <h4>{{ dive.depth_max }}</h4>
+                <h3>{{ trip.country }}</h3>
               </div>
             </div>
           </div>
@@ -87,39 +57,28 @@
         <div class="question-details-ss-bt-container">
           <div class="question-details-sub soft-border-top soft-border-top-expand">
             <div class="sub-header">
-              <img src="{% static 'images/stop.svg' %}" alt="helmet" />
+              <img src="{% static 'images/020-diving.svg' %}" alt="helmet" />
               <h3>Safety Stops</h3>
             </div>
 
             <div class="question-details-sub-inner">
               <div class="field-wrapper">
-                <h3>Depth</h3>
-                <h4>{{ dive.safety_stop_depth }}</h4>
-              </div>
-
-              <div class="field-wrapper soft-border-left">
-                <h3>Time (min)</h3>
-                <h4>{{ dive.safety_stop_time }}</h4>
+                <h3>{{ trip.start_date }}</h3>
               </div>
             </div>
           </div>
 
           <div class="question-details-sub soft-border-left soft-border-top soft-border-top-expand">
             <div class="sub-header">
-              <img src="{% static 'images/sea-life.svg' %}" alt="helmet" />
+              <img src="{% static 'images/020-diving.svg' %}" alt="helmet" />
               <h3>Bottom Time</h3>
             </div>
 
             <div class="question-details-sub-inner">
               <div class="field-wrapper">
-                <h3>BT</h3>
-                <h4>{{ dive.bottom_time }}</h4>
+                <h3>{{ trip.end_date }}</h3>
               </div>
 
-              <div class="field-wrapper soft-border-left">
-                <h3>Acc. BT</h3>
-                <h4>{{ dive.acc_bottom_time }}</h4>
-              </div>
             </div>
           </div>
         </div>

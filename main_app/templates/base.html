@@ -33,7 +33,7 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
               {% if user.is_authenticated %}
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" aria-current="page" href="#">Home</a>
               <a class="nav-link" href="{% url 'dives_index' %}">Dives</a>
               <a class="nav-link" href="{% url 'trips_index' %}">Trips</a>
               <a class="nav-link" href="{% url 'buddies_index' %}">Buddies</a>
