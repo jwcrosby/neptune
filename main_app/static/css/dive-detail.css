@@ -242,13 +242,14 @@ p {
   border-radius: 2px;
   font-weight: 400;
   margin-left: 2px;
-  padding: 2px
+  padding: 2px;
 }
 
 .notes table {
   text-align: left;
   border-collapse: collapse;
   margin: 8px;
+  width: 97%;
 }
 
 .notes td {
