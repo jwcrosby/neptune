@@ -125,8 +125,7 @@ h4 {
 
 .btn {
   align-self: flex-end;
-  margin-left: 10px;
-  margin-bottom: 0;
+  margin: 15px 40px 20px 0;
 }
 
 .soft-border-left {
@@ -149,11 +148,12 @@ h4 {
   select {
     width: 100%;
     color: white;
-    background-color: rgba(14, 27, 51, 0.725);
+    background-color: rgba(13, 28, 56);
     font-size: clamp(1.6rem, 1.1vw, 2rem);
-    line-height: 28px;
+    line-height: 25px;
     border-radius: 2px;
     font-weight: 400;
+    margin-bottom: 2px;
   }
 
   h4 {
@@ -231,6 +231,7 @@ h4 {
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin: 4px 0;
   }
 
   .question-details-sub-inner {
@@ -332,21 +333,21 @@ h4 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 0px 20px 6px;
+    margin: 0px 20px 8px;
   }
 
   .question-conditions-equipment-container {
     display: flex;
     flex-direction: row;
-    margin: 0px 20px 6px;
+    margin: 0px 20px 8px;
   }
 
   .question-conditions {
-    margin-right: 3px
+    margin-right: 4px
   }
 
   .question-equipment {
-    margin-left: 3px
+    margin-left: 4px
   }
 
   .question-conditions,
