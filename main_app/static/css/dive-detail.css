@@ -99,10 +99,8 @@
 .field-wrapper {
   height: 100%;
   width: 100%;
-  
   align-items: center;
   justify-content: center;
-  height: 100%;
 }
 
 .field-wrapper > h3 {
@@ -471,6 +469,10 @@ p {
 
   .dive-img {
     max-width: 400px;
+  }
+
+  .main-data-container  {
+    height: 45px;
   }
 }
 

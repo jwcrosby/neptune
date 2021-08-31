@@ -24,13 +24,13 @@
 <div class="dive-log-container">
   <div class="dive-log">
   
-    <div class="questions question-main ">
-      <div class="field-wrapper">
+    <div class="questions question-main">
+      <div class="field-wrapper main-wrapper">
         <div class="sub-header-main">
           <img src="{% static 'images/020-diving.svg' %}" alt="calendar" />
           <h3>Date</h3>
         </div>
-        <div class="data-container">
+        <div class="data-container main-data-container">
           <h4>{{ dive.date }}</h4>
         </div>
       </div>
@@ -43,7 +43,7 @@
           />
           <h3>Site</h3>
         </div>
-        <div class="data-container soft-border-left">
+        <div class="data-container main-data-container soft-border-left">
           <h4>{{ dive.site }}</h4>
         </div>
       </div>
@@ -56,7 +56,7 @@
           />
           <h3>Trip</h3>
         </div>
-        <div class="data-container soft-border-left">
+        <div class="data-container main-data-container soft-border-left">
           <h4 class="soft-border-left">{{ dive.trip }}</h4>
         </div>
       </div>
