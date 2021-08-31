@@ -2,10 +2,6 @@
 
 # [Click here to launch site.](https://dive-neptune.herokuapp.com/)
 
-## Screenshots
-
-![DESKTOP SCREENSHOT](/main_app/static/images/readme/header.png) 
-
 ## Technologies Used
 
 * Python
@@ -17,6 +13,12 @@
 * Heroku
 * Bootstrap
 * Lottie
+
+## Screenshots
+
+![DESKTOP SCREENSHOT](/main_app/static/images/readme/splash.png) 
+
+![DIVELOG FORM SCREENSHOT](/main_app/static/images/readme/divelog.png) 
 
 ## Attributions
 
