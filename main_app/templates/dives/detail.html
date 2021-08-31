@@ -115,7 +115,7 @@
         </div>
 
         <div class="question-details-ss-bt-container">
-          <div class="question-details-sub soft-border-top">
+          <div class="question-details-sub soft-border-top soft-border-top-expand">
             <div class="sub-header">
               <img src="{% static 'images/stop.svg' %}" alt="helmet" />
               <h3>Safety Stops</h3>
@@ -134,7 +134,7 @@
             </div>
           </div>
 
-          <div class="question-details-sub soft-border-left soft-border-top">
+          <div class="question-details-sub soft-border-left soft-border-top soft-border-top-expand">
             <div class="sub-header">
               <img src="{% static 'images/sea-life.svg' %}" alt="helmet" />
               <h3>Bottom Time</h3>
@@ -172,7 +172,7 @@
             <h4>{{ dive.weather }}</h4>
           </div>
 
-          <div class="sub-header soft-border-top">
+          <div class="sub-header soft-border-top soft-border-top-expand">
             <img src="{% static 'images/handwash.svg' %}" alt="a diving log" />
             <h3>Visibility</h3>
           </div>
@@ -180,7 +180,7 @@
             <h4>{{ dive.visibility }}</h4>
           </div>
 
-          <div class="sub-header soft-border-top">
+          <div class="sub-header soft-border-top soft-border-top-expand">
             <img
               src="{% static 'images/laundry.svg' %}"
               alt="thermometer in water"
@@ -230,7 +230,7 @@
             <h4>{{ dive.suit_notes }}</h4>
           </div>
 
-          <div class="sub-header soft-border-top">
+          <div class="sub-header soft-border-top soft-border-top-expand">
             <img
               src="{% static 'images/005-weights.svg' %}"
               alt="dive weights"
@@ -254,68 +254,85 @@
 
     <div class="question-conditions-equipment-container">
       <div class="questions question-conditions">
-        <div class="question-conditions-filler">
-          <div class="sub-header-main">
-            <img
-              src="{% static 'images/023-divers.svg' %}"
-              alt="a diving log"
-            />
-            <h3>Dive Buddies</h3>
-          </div>
+  <div class="question-conditions-filler">
+    <div class="sub-header-main">
+      <img
+        src="{% static 'images/023-divers.svg' %}"
+        alt="a diving log"
+      />
+      <h3>Dive Buddies</h3>
+    </div>
 
-          <section class="buddies">
-            <h3>Attending</h3>
-            <div class="subsection-content">
-              {% if dive.buddies.count %} 
-                {% for buddy in dive.buddies.all %}
-                  <div class="buddy-container">
-                    <div class="color-block"></div>
-                    <a href="{% url 'buddies_detail' buddy.id %}">
-                    </a>
-                  </div>
-                {% endfor %} 
-              {% else %}
-                <p class="no-buddies">This dive doesn't have any buddies 😞</p>
-              {% endif %}
-            </div>
-            <h3>Available</h3>
-            <div class="subsection-content">
-              {% if buddies_not_currently_attending.count %} 
-                {% for buddy in buddies_not_currently_attending.all %}
-                <div class="buddy-container">
-                  <div class="color-block"></div>
-                  <a href="{% url 'buddies_detail' buddy.id %}">
-                    <div class="buddy-content">
-                    {% if buddy.icon %}
-                      {% if buddy.icon == "A" %}
-                      <img src="{% static 'images/014-diver.svg' %}" alt="brunette diver" />
-                      {% elif buddy.icon == "B" %}
-                      <img src="{% static 'images/015-diver.svg' %}" alt="blonde diver" />
-                      {% else %}
-                      <img src="{% static 'images/016-diver.svg' %}" alt="mysterious diver" />
-                      {% endif %}
-                    {% endif %}
-                    <h3>{{ buddy.name }}</h3>
-                    </div>
-                  </a>
-                  <form
-                    action="{% url 'associate_buddy_with_dive' dive.id buddy.id %}"
-                    method="post"
-                  >
-                  {% csrf_token %}
-                    <button type="submit" class="btn submit">+</button>
-                  </form>
-                </div>
-                {% endfor %} 
-              {% else %}
-                <p class="all-buddies">
-                  All available buddies already attending 🥳
-                </p>
-              {% endif %}
-            </div>
-          </section>
-        </div>
+    <section class="buddies">
+      <div class="sub-header">
+        <h3>Attending</h3>
       </div>
+      <div class="subsection-content">
+        {% if dive.buddies.count %} 
+          {% for buddy in dive.buddies.all %}
+          <div class="buddy-container">
+            <div class="color-block"></div>
+              <a href="{% url 'buddies_detail' buddy.id %}">
+                <div class="buddy-content">
+                {% if buddy.icon %}
+                  {% if buddy.icon == "A" %}
+                  <img src="{% static 'images/014-diver.svg' %}" alt="brunette diver" />
+                  {% elif buddy.icon == "B" %}
+                  <img src="{% static 'images/015-diver.svg' %}" alt="blonde diver" />
+                  {% else %}
+                  <img src="{% static 'images/016-diver.svg' %}" alt="mysterious diver" />
+                  {% endif %}
+                {% endif %}
+                </div>
+                <h3>{{ buddy.name }}</h3>
+              </a>
+            </div>
+          {% endfor %} 
+        {% else %}
+          <p class="no-buddies">This dive doesn't have any buddies 😞</p>
+        {% endif %}
+      </div>
+      <div class="sub-header soft-border-top soft-border-top-expand">
+        <h3>Available</h3>
+      </div>
+      <div class="subsection-content">
+        {% if buddies_not_currently_attending.count %} 
+          {% for buddy in buddies_not_currently_attending.all %}
+          <div class="buddy-container">
+            <div class="color-block"></div>
+              <a href="{% url 'buddies_detail' buddy.id %}">
+                <div class="buddy-content">
+                {% if buddy.icon %}
+                  {% if buddy.icon == "A" %}
+                  <img src="{% static 'images/014-diver.svg' %}" alt="brunette diver" />
+                  {% elif buddy.icon == "B" %}
+                  <img src="{% static 'images/015-diver.svg' %}" alt="blonde diver" />
+                  {% else %}
+                  <img src="{% static 'images/016-diver.svg' %}" alt="mysterious diver" />
+                  {% endif %}
+                {% endif %}
+                </div>
+                <h3>{{ buddy.name }}</h3>
+              </a>
+            </div>
+            <form
+              action="{% url 'associate_buddy_with_dive' dive.id buddy.id %}"
+              method="post"
+            >
+            {% csrf_token %}
+              <button type="submit" class="btn submit">+</button>
+            </form>
+          </div>
+          {% endfor %} 
+        {% else %}
+          <p class="all-buddies">
+            All available buddies already attending 🥳
+          </p>
+        {% endif %}
+      </div>
+    </section>
+  </div>
+
 
       <div class="questions question-equipment">
         <div class="question-equipment-filler">
@@ -328,7 +345,9 @@
           </div>
 
           <section class="notes">
-            <h3>Add a Note</h3>
+            <div class="sub-header">
+              <h3>Add a Note</h3>
+            </div>
             <form
               action="{% url 'add_note' dive.id %}"
               method="post"
@@ -337,7 +356,9 @@
               {% csrf_token %} {{ note_form.as_p }}
               <button type="submit" class="btn submit">Add Note</button>
             </form>
-            <h3>Past Notes</h3>
+            <div class="sub-header">
+              <h3>Notes</h3>
+            </div>
             {% if dive.note_set.all.count %}
             <table>
               <thead>
@@ -361,7 +382,7 @@
       </div>
     </div>
 
-    <div class="questions question-main">
+    <div class="questions question-photo">
       <div class="field-wrapper">
         <div class="sub-header-main">
           <img src="{% static 'images/009-camera.svg' %}" alt="a diving log" />
