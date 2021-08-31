@@ -348,10 +348,10 @@
                 <h3>Add a Note</h3>
               </div>
               <form
-                action="{% url 'add_note' dive.id %}
+                action="{% url 'add_note' dive.id %}"
                 method="post"
                 class="subsection-content"
-                autocomplete="off
+                autocomplete="off"
               >
                 {% csrf_token %} {{ note_form.note }}
                 <button type="submit" class="btn submit">+</button>
@@ -379,39 +379,41 @@
     </div>
 
     <div class="questions question-photo">
-      <div class="field-wrapper">
         <div class="sub-header-main">
           <img src="{% static 'images/009-camera.svg' %}" alt="a diving log" />
           <h3>Upload a Photo</h3>
         </div>
-
-        <div class="dive-img">
-          {% if dive.photo.url %}
-          <img
-            src="{{dive.photo.url}}"
-            alt="A photo of {{dive.number}}"
-            class="usr-img"
-          />
-          {% else %}
-          <img
-            src="{% static 'images/placeholder.png' %}"
-            alt="placeholder image"
-          />
-          {% endif %}
-        </div>
-        <p id="file-name"></p>
-        <form
-          action="{% url 'add_photo' dive.id %}"
-          enctype="multipart/form-data"
-          method="POST"
-        >
-          {% csrf_token %}
-          <label class="btn secondary"
-            >Select
-            <input type="file" name="photo-file" id="file-input" />
-          </label>
-          <button type="submit" class="btn submit">Upload</button>
-        </form>
+      <div class="field-wrapper">
+        <div class="dive-img-container">
+          <div class="dive-img">
+            {% if dive.photo.url %}
+            <img
+              src="{{dive.photo.url}}"
+              alt="A photo of {{dive.number}}"
+              class="usr-img"
+            />
+            {% else %}
+            <img
+              src="{% static 'images/placeholder.png' %}"
+              alt="placeholder image"
+            />
+            {% endif %}
+          </div>
+          <p id="file-name"></p>
+          <form
+            action="{% url 'add_photo' dive.id %}"
+            enctype="multipart/form-data"
+            method="POST"
+            class='dive-form'
+          >
+            {% csrf_token %}
+            <label class="btn secondary"
+              >Select
+              <input type="file" name="photo-file" id="file-input" />
+            </label>
+            <button type="submit" class="btn submit">Upload</button>
+          </form>
+      </div>
       </div>
     </div>
   </div>
