@@ -72,7 +72,7 @@
 }
 
 .sub-header-main {
-  background-color: rgba(29, 54, 90, 0.801);
+  background-color: rgba(30, 57, 92, 0.801);
   border-bottom: 2px solid rgba(255, 255, 255, 0.212);
   width: 100%;
 }
@@ -159,6 +159,7 @@ h4 {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  margin: 2px;
   padding: 2px;
 }
 .buddy-container a {
@@ -168,7 +169,7 @@ h4 {
 
 .buddy-container .btn {
   padding: 3px 10px;
-  margin-left: 4px;
+  margin-left: 5px;
 }
 
 .buddy-content {
@@ -185,7 +186,6 @@ h4 {
   border-radius: 2px;
 }
 
-
 .smaller-sub-header > h3 {
   font-size: clamp(2rem, 2.1vw, 2.8rem);
   margin: 8px;
@@ -197,53 +197,65 @@ h4 {
   margin-bottom: 2.5px;
 }
 
-.dive-details {
-  width: 98%;
+.notes-subsection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
-.dive-details h2 {
-  font-size: var(--font-xl);
-  margin: 0 0 10px;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.dive-details h3 {
-  margin: 20px 0 10px;
-  font-size: var(--font-l);
-}
-
-.dive-details p {
+.notes input {
+  width: 100%;
+  color: white;
+  background-color: rgba(14, 27, 51, 0.4);
   font-size: var(--font-reg);
-  margin: 5px 0;
+  line-height: 32px;
+  border-radius: 2px;
+  font-weight: 400;
+  margin-left: 2px;
+  padding: 2px
 }
 
+.notes table {
+  text-align: left;
+  border-collapse: collapse;
+  margin: 8px;
+}
+
+.notes td {
+  margin: 2px;
+  padding: 7px 5px;
+  font-size: var(--font-reg);
+  border-radius: 4px;
+}
+
+.notes form {
+  display: flex;
+  flex-direction: row;
+  padding: 9px 11px;
+}
+
+.notes .btn {
+  padding: 3px 10px;
+  margin-left: 8px;
+  margin-bottom: 3px;
+}
+
+.notes tr {
+  width: 100%;
+}
+
+.notes tr:nth-child(odd) {
+  background-color: #162e50;
+}
+
+.notes tr:nth-child(even) {
+  background-color: #7e64314f;
+}
 
 .subsection-title img {
   height: 42px;
   margin-right: 8px;
-}
-
-.notes table {
-  width: calc(100% - 16px);
-  text-align: left;
-  border-collapse: collapse;
-  margin: 0 8px;
-}
-
-.notes td {
-  padding: 8px 5px;
-  font-size: var(--font-reg);
-}
-
-.notes th {
-  font-size: var(--font-l);
-  padding: 5px 5px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.212);
-}
-
-.notes tr:nth-child(even) {
-  background-color: #f3f3fd;
 }
 
 .usr-img {

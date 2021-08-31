@@ -21,6 +21,7 @@
   align-items: center;
 }
 
+
 .sub-header img {
   height: 30px;
   margin-right: 10px;
@@ -69,7 +70,7 @@
 }
 
 .sub-header-main {
-  background-color: rgba(29, 54, 90, 0.801);
+  background-color: rgba(30, 57, 92, 0.801);
   border-bottom: 2px solid rgba(255, 255, 255, 0.212);
   width: 100%;
 }
@@ -143,8 +144,6 @@ h4 {
   .buddy-content > img {
     height: 52px
   }
-
-
 
   input,
   select {
@@ -446,8 +445,8 @@ h4 {
   }
 
 
-  .question-main{
-    background-color: rgb(28,52,87);
+  .question-main {
+    background-color: rgba(30, 57, 92, 0.952);
   }
   .field-wrapper{
     padding: 0 10px 6px;

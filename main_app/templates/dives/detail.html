@@ -343,18 +343,21 @@
           </div>
 
           <section class="notes">
-            <div class="sub-header smaller-sub-header">
-              <h3>Add a Note</h3>
+            <div class='add-note-container'>
+              <div class="sub-header smaller-sub-header">
+                <h3>Add a Note</h3>
+              </div>
+              <form
+                action="{% url 'add_note' dive.id %}
+                method="post"
+                class="subsection-content"
+                autocomplete="off
+              >
+                {% csrf_token %} {{ note_form.note }}
+                <button type="submit" class="btn submit">+</button>
+              </form>
             </div>
-            <form
-              action="{% url 'add_note' dive.id %}"
-              method="post"
-              class="subsection-content"
-            >
-              {% csrf_token %} {{ note_form.as_p }}
-              <button type="submit" class="btn submit">Add Note</button>
-            </form>
-            <div class="sub-header smaller-sub-header">
+            <div class="sub-header smaller-sub-header soft-border-top soft-border-top-expand">
               <h3>Notes</h3>
             </div>
             {% if dive.note_set.all.count %}
@@ -396,8 +399,6 @@
           />
           {% endif %}
         </div>
-
-        <h3>Change dive photo</h3>
         <p id="file-name"></p>
         <form
           action="{% url 'add_photo' dive.id %}"
