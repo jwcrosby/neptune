@@ -29,7 +29,7 @@ class Trip(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return f"Trip: {self.destination}, {self.country}_{self.start_date} - {self.end_date}"
+        return f"{self.destination}, {self.country} ({self.start_date} - {self.end_date})"
 
     def get_absolute_url(self):
         return reverse('trips_detail', kwargs={'trip_id': self.id})
