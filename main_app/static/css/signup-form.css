@@ -1,0 +1,58 @@
+/* main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+} */
+
+section {
+  width: 100%;
+  padding: 20px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+label {
+  font-size: clamp(1.6rem, 2vw, 2.7rem);
+  margin: 10px 5px;
+  font-weight: 700;
+}
+
+input{
+  font-size: clamp(1.4rem, 1.7vw, 2.3rem);
+  font-weight: 500;
+  line-height: 28px;
+  margin-bottom: 10px;
+}
+
+.helptext {
+  font-size: clamp(1.3rem, 1.7vw, 2rem);
+  font-weight: 300;
+  word-wrap: break-word;
+  text-align: center;
+}
+
+li {
+  font-size: clamp(1.3rem, 1.7vw, 2rem);
+  font-weight: 300;
+  word-wrap: break-word;
+  text-align: center;
+
+}
+
+form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
